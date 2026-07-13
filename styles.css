@@ -54,7 +54,7 @@ button, input, textarea { font: inherit; }
 .nav-toggle span { display: block; width: 22px; height: 2px; margin: 6px auto; background: var(--text); transition: .2s var(--ease); }
 .nav-toggle[aria-expanded=true] span:first-child { transform: translateY(8px) rotate(45deg); }
 .nav-toggle[aria-expanded=true] span:last-child { transform: translateY(-8px) rotate(-45deg); }
-.hero { position: relative; min-height: 640px; overflow: hidden; padding: 150px max(32px, calc((100vw - 1480px) / 2)) 90px; display: flex; align-items: center; isolation: isolate; }
+.hero { position: relative; min-height: 80vh; min-height: 80dvh; overflow: hidden; padding: 150px max(32px, calc((100vw - 1480px) / 2)) 90px; display: flex; align-items: center; isolation: isolate; }
 .hero h1 { margin: 0; font: 600 clamp(58px, 8vw, 104px)/.96 Sora, sans-serif; text-transform: uppercase; letter-spacing: 0; }
 .hero p { width: 100%; max-width: 430px; margin: 24px 0 0; font-size: clamp(19px, 2vw, 25px); }
 .body-copy { font-size: 17px !important; line-height: 1.75; }
@@ -63,7 +63,6 @@ button, input, textarea { font: inherit; }
 .hero-home h1 { font-size: clamp(58px, 6.5vw, 92px); }
 .hero-dark { color: #fff; background: radial-gradient(circle at 70% 48%, rgba(var(--blue-rgb), .24), transparent 28rem), linear-gradient(110deg, #06101e 0%, #10233b 45%, #9aa8ba 100%); }
 .hero-home {
-  min-height: 660px;
   background:
     linear-gradient(90deg, rgba(3, 18, 37, .94) 0%, rgba(3, 18, 37, .84) 30%, rgba(3, 18, 37, .38) 57%, rgba(3, 18, 37, .08) 100%),
     url("assets/generated/home-hero-profile.png") center / cover no-repeat;
@@ -298,7 +297,7 @@ button, input, textarea { font: inherit; }
   .nav-menu.is-open { opacity: 1; pointer-events: auto; transform: none; }
   .dropdown-menu { position: static; display: none; box-shadow: none; border: 0; opacity: 1; pointer-events: auto; transform: none; }
   .nav-dropdown.is-open .dropdown-menu { display: block; }
-  .hero { min-height: 560px; padding-top: 130px; }
+  .hero { padding-top: 130px; }
   .product-cards, .precision, .tech-grid, .product-section, .marine-row, .marine-row.reverse, .product-section.split-left, .news-controls, .contact-main { grid-template-columns: 1fr; }
   .product-section, .marine-row { margin-bottom: 22px; }
   .product-section.split-left .product-info,
@@ -314,7 +313,7 @@ button, input, textarea { font: inherit; }
 @media (max-width: 620px) {
   :root { --shell: min(100vw - 28px, 520px); }
   .brand { width: 178px; }
-  .hero { min-height: 520px; padding-inline: 18px; }
+  .hero { padding-inline: 18px; }
   .hero h1 { font-size: clamp(46px, 13vw, 62px); }
   .hero-home h1 { font-size: clamp(38px, 10.5vw, 48px); }
   .hero p { font-size: 18px; }
