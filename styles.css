@@ -93,12 +93,12 @@ button, input, textarea { font: inherit; }
 .marine-tile::before {
   background:
     linear-gradient(90deg, rgba(255,255,255,.96) 0%, rgba(255,255,255,.82) 36%, rgba(255,255,255,.22) 70%),
-    url("assets/generated/card-marine-doors.png") center / cover no-repeat;
+    url("assets/photos/home-card-marine-doors.png") center / cover no-repeat;
 }
 .home-tile::before {
   background:
     linear-gradient(90deg, rgba(255,255,255,.96) 0%, rgba(255,255,255,.82) 36%, rgba(255,255,255,.22) 70%),
-    url("assets/generated/card-home-systems.png") center / cover no-repeat;
+    url("assets/photos/home-card-home-systems.png") center 52% / cover no-repeat;
 }
 .precision, .tech-grid, .work, .values, .audience, .numbers { padding: 56px 0; }
 .precision { display: grid; grid-template-columns: .82fr 1.18fr; gap: 38px; align-items: center; }
@@ -188,12 +188,12 @@ button, input, textarea { font: inherit; }
   background-size: cover;
   background-position: center;
 }
-.entry-photo { background-image: url("assets/generated/product-entry-door.png"); }
-.loft-photo { background-image: url("assets/generated/product-loft-system.png"); }
-.yacht-photo-one { background-image: url("assets/generated/marine-sliding-doors.png"); }
-.yacht-photo-two { background-image: url("assets/generated/marine-folding-doors.png"); }
-.yacht-photo-three { background-image: url("assets/generated/marine-popup-windows.png"); }
-.yacht-photo-four { background-image: url("assets/generated/marine-custom-doors.png"); }
+.entry-photo { background-image: url("assets/photos/home-systems-entry-doors.png"); background-position: center 48%; }
+.loft-photo { background-image: url("assets/photos/home-systems-loft-systems.png"); background-position: center 52%; }
+.yacht-photo-one { background-image: url("assets/photos/marine-doors-sliding.png"); background-position: center 50%; }
+.yacht-photo-two { background-image: url("assets/photos/marine-doors-folding.png"); background-position: center 52%; }
+.yacht-photo-three { background-image: url("assets/photos/marine-doors-pop-up-slide.png"); background-position: center 50%; }
+.yacht-photo-four { background-image: url("assets/photos/marine-doors-custom.png"); background-position: center 50%; }
 .hero-news, .hero-about, .hero-contact { background: linear-gradient(90deg, #fff 0 42%, rgba(255,255,255,.72)), #e6f2fb; }
 .hero-news {
   background:
