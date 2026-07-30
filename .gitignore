@@ -4,3 +4,11 @@ strona.zip
 skills-lock.json
 Thumbs.db
 .DS_Store
+.env
+wp-content/uploads/
+wp-content/debug.log
+test-results/
+playwright-report/
+screenshots/
+*.sql
+*.sql.gz
