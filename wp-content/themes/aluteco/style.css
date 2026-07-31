@@ -124,6 +124,28 @@ button, input, textarea { font: inherit; }
 .icon, .work-icon { display: grid; width: 64px; height: 64px; margin: 0 auto 18px; place-items: center; color: var(--blue); position: relative; }
 .icon-card .icon { margin-bottom: 0; }
 .icon svg, .work-icon svg { width: 54px; height: 54px; fill: none; stroke: currentColor; stroke-width: 1.65; stroke-linecap: round; stroke-linejoin: round; }
+.icon > .wp-block-image,
+.work-icon > .wp-block-image,
+.icon > .wp-block-icon,
+.work-icon > .wp-block-icon,
+.icon > picture,
+.work-icon > picture {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: grid;
+  place-items: center;
+}
+.icon img,
+.work-icon img,
+.icon picture,
+.work-icon picture {
+  display: block;
+  width: 54px;
+  height: 54px;
+  margin: auto;
+  object-fit: contain;
+}
 .icon::before, .icon::after, .work-icon::before, .work-icon::after { content: none; }
 .tech-banner {
   min-height: 330px;

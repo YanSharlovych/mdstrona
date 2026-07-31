@@ -1,4 +1,5 @@
 import { expect, test } from "@playwright/test";
+import path from "node:path";
 
 const publicRoutes = [
   "/",
@@ -123,6 +124,52 @@ test("skip link and mobile navigation work with the keyboard", async ({
   await expect(mobileMenu.getByRole("link", { name: "Home Systems" })).toBeVisible();
   await page.keyboard.press("Escape");
   await expect(mobileMenu).not.toBeVisible();
+});
+
+test("Gutenberg icon and image blocks are not replaced by fallbacks", async ({
+  page
+}) => {
+  await page.setContent(`
+    <div id="custom-icon" class="work-icon chat">
+      <div class="wp-block-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="8"></circle>
+        </svg>
+      </div>
+    </div>
+    <div id="custom-image" class="icon shield">
+      <figure class="wp-block-image">
+        <img
+          alt="Custom quality icon"
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+        >
+      </figure>
+    </div>
+    <div id="fallback-icon" class="work-icon tools"></div>
+  `);
+
+  await page.addScriptTag({
+    path: path.join(
+      process.cwd(),
+      "wp-content",
+      "themes",
+      "aluteco",
+      "assets",
+      "js",
+      "site.js"
+    )
+  });
+
+  await expect(page.locator("#custom-icon .wp-block-icon svg")).toHaveCount(1);
+  await expect(page.locator("#custom-icon")).not.toHaveAttribute("aria-hidden");
+  await expect(page.locator("#custom-image img")).toHaveCount(1);
+  await expect(page.locator("#custom-image svg")).toHaveCount(0);
+  await expect(page.locator("#custom-image")).not.toHaveAttribute("aria-hidden");
+  await expect(page.locator("#fallback-icon svg")).toHaveCount(1);
+  await expect(page.locator("#fallback-icon")).toHaveAttribute(
+    "aria-hidden",
+    "true"
+  );
 });
 
 test("contact form exposes usable labels and validation", async ({ page }) => {

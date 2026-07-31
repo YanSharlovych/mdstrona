@@ -168,6 +168,15 @@ wp-content/themes/aluteco/assets/
 If a file is replaced directly in that directory, preserve its filename and
 dimensions or update the related pattern and content bootstrap reference.
 
+### Changing icons
+
+Icons in sections such as `How we work` use an editable Gutenberg container.
+Open List View, select the icon Group inside the relevant card, and insert an
+Icon or Image block into it. Choose the new icon or use `Replace` on an existing
+block, then update the page. The theme uses its original SVG only when that
+container is empty, so saved Gutenberg icons are never overwritten on the
+frontend.
+
 ### Using ALUTECO patterns
 
 1. Edit a page or create a new page in Gutenberg.

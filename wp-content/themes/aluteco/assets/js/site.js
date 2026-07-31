@@ -37,8 +37,16 @@
     wrench: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a4.5 4.5 0 0 0-5.8 5.8L3 18l3 3 5.9-5.9a4.5 4.5 0 0 0 5.8-5.8l-3 3-3-3 3-3Z"/></svg>'
   };
 
+  const hasEditableIcon = (element) =>
+    Boolean(element?.querySelector("img, picture, svg, .wp-block-image"));
+
   const setIcon = (element, iconName) => {
     if (!element || !icons[iconName]) return;
+    if (hasEditableIcon(element)) {
+      element.removeAttribute("aria-hidden");
+      return;
+    }
+
     element.innerHTML = icons[iconName];
     element.setAttribute("aria-hidden", "true");
   };
@@ -81,6 +89,8 @@
     });
 
     document.querySelectorAll(".feature-icons span, .feature-icons > p").forEach((element) => {
+      if (hasEditableIcon(element)) return;
+
       const iconName = featureIconFor(element.textContent);
       element.insertAdjacentHTML("afterbegin", icons[iconName]);
     });
