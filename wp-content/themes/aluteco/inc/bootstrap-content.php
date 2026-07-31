@@ -32,6 +32,30 @@ function aluteco_seed_render_pattern( $slug ) {
 }
 
 /**
+ * Find the local administrator used as the author of seeded content.
+ *
+ * @return int
+ */
+function aluteco_seed_author_id() {
+	$login = sanitize_user( (string) getenv( 'WP_ADMIN_USER' ) );
+	$user  = $login ? get_user_by( 'login', $login ) : false;
+
+	if ( ! $user instanceof WP_User ) {
+		$administrators = get_users(
+			array(
+				'role'    => 'administrator',
+				'number'  => 1,
+				'orderby' => 'ID',
+				'order'   => 'ASC',
+			)
+		);
+		$user           = $administrators ? $administrators[0] : false;
+	}
+
+	return $user instanceof WP_User ? (int) $user->ID : 0;
+}
+
+/**
  * Insert a page only when its path does not already exist.
  *
  * Existing content is intentionally preserved so setup remains idempotent after
@@ -44,15 +68,21 @@ function aluteco_seed_render_pattern( $slug ) {
  */
 function aluteco_seed_page( $title, $slug, $content = '' ) {
 	$existing = get_page_by_path( $slug, OBJECT, 'page' );
+	$author_id = aluteco_seed_author_id();
 
 	if ( $existing instanceof WP_Post ) {
+		$updates = array( 'ID' => $existing->ID );
+
 		if ( 'publish' !== $existing->post_status ) {
-			wp_update_post(
-				array(
-					'ID'          => $existing->ID,
-					'post_status' => 'publish',
-				)
-			);
+			$updates['post_status'] = 'publish';
+		}
+
+		if ( 0 === (int) $existing->post_author && $author_id ) {
+			$updates['post_author'] = $author_id;
+		}
+
+		if ( count( $updates ) > 1 ) {
+			wp_update_post( $updates );
 		}
 
 		return (int) $existing->ID;
@@ -65,6 +95,7 @@ function aluteco_seed_page( $title, $slug, $content = '' ) {
 			'post_content' => $content,
 			'post_status'  => 'publish',
 			'post_type'    => 'page',
+			'post_author'  => $author_id,
 		),
 		true
 	);
@@ -238,8 +269,18 @@ function aluteco_seed_article_content( $lead, $heading, $body, $highlights ) {
  */
 function aluteco_seed_post( $post, $categories ) {
 	$existing = get_page_by_path( $post['slug'], OBJECT, 'post' );
+	$author_id = aluteco_seed_author_id();
 
 	if ( $existing instanceof WP_Post ) {
+		if ( 0 === (int) $existing->post_author && $author_id ) {
+			wp_update_post(
+				array(
+					'ID'          => $existing->ID,
+					'post_author' => $author_id,
+				)
+			);
+		}
+
 		if ( ! has_post_thumbnail( $existing->ID ) ) {
 			$image_id = aluteco_seed_attachment( $post['image'], $post['title'] );
 
@@ -265,6 +306,7 @@ function aluteco_seed_post( $post, $categories ) {
 			'post_status'  => 'publish',
 			'post_type'    => 'post',
 			'post_date'    => $post['date'],
+			'post_author'  => $author_id,
 			'post_category' => array( $categories[ $post['category'] ] ),
 			'tags_input'   => $post['tags'],
 		),

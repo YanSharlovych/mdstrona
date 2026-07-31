@@ -20,9 +20,11 @@ if ! wp core is-installed --allow-root >/dev/null 2>&1; then
     --allow-root
 fi
 
-wp theme activate aluteco --allow-root
+if [ "$(wp theme list --status=active --field=name --allow-root)" != "aluteco" ]; then
+  wp theme activate aluteco --allow-root
+fi
+
 wp eval-file /var/www/html/wp-content/themes/aluteco/inc/bootstrap-content.php --allow-root
 wp rewrite structure '/%postname%/' --allow-root
-wp rewrite flush --allow-root
 
 echo "ALUTECO WordPress setup complete."

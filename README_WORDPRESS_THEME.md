@@ -90,6 +90,15 @@ docker compose run --rm wpcli
 The bootstrap is idempotent. Existing page and post content is not overwritten.
 Missing seeded media relationships are restored when possible.
 
+Activate the theme manually when importing it into another WordPress
+installation:
+
+```powershell
+docker compose run --rm --entrypoint wp wpcli theme activate aluteco
+```
+
+The same action is available under `Appearance > Themes` in WordPress admin.
+
 Stop the containers without deleting content:
 
 ```powershell
@@ -159,6 +168,18 @@ wp-content/themes/aluteco/assets/
 If a file is replaced directly in that directory, preserve its filename and
 dimensions or update the related pattern and content bootstrap reference.
 
+### Using ALUTECO patterns
+
+1. Edit a page or create a new page in Gutenberg.
+2. Open the block inserter and choose `Patterns`.
+3. Select `ALUTECO pages` for a complete page composition or `ALUTECO
+   sections` for a reusable section.
+4. Insert the pattern, then edit its text, images, links, and buttons as normal
+   core blocks.
+
+Patterns are starting layouts. Once inserted, their blocks belong to that page
+and can be edited independently.
+
 ## Contact form and email
 
 The contact page uses the `[aluteco_contact_form]` shortcode. Submission is
@@ -227,6 +248,35 @@ docker compose logs wordpress
 docker compose run --rm --entrypoint wp wpcli theme list
 docker compose run --rm --entrypoint wp wpcli plugin list
 ```
+
+Follow runtime logs:
+
+```powershell
+docker compose logs -f wordpress db mailpit
+```
+
+WordPress writes local debug messages to
+`wp-content/debug.log` inside the WordPress volume. The file is not exposed to
+visitors and is ignored by Git. In production, disable `WP_DEBUG` and
+`WP_DEBUG_LOG`.
+
+## Technical decisions and limitations
+
+- Core Gutenberg blocks, patterns, templates, and template parts keep the theme
+  compatible with WordPress updates and avoid a page-builder dependency.
+- Existing visual class names are preserved in the theme stylesheet to retain
+  the approved desktop and mobile design.
+- The setup script adds missing demo content and repairs missing seed metadata,
+  but intentionally does not overwrite existing page or article content.
+- `ENG / PL` remains a visual navigation item because no translated content or
+  multilingual workflow was supplied. A production language switch requires
+  translated pages and a multilingual strategy.
+- Mailpit is for local testing only. Production email requires a real SMTP
+  service.
+- The included legal pages are clearly marked editable placeholders and require
+  review by the client's legal adviser before launch.
+- Google Fonts are loaded from Google on the frontend. They can be self-hosted
+  if the production privacy policy or offline requirements demand it.
 
 ## Backups and deployment
 

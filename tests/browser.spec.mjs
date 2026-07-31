@@ -138,11 +138,13 @@ test("contact form exposes usable labels and validation", async ({ page }) => {
 
 test("news is dynamic and paginated", async ({ page, request }) => {
   const postsResponse = await request.get(
-    "/wp-json/wp/v2/posts?per_page=1&_fields=id"
+    "/wp-json/wp/v2/posts?per_page=100&_fields=id,author"
   );
+  const posts = await postsResponse.json();
 
   expect(postsResponse.ok()).toBeTruthy();
   expect(Number(postsResponse.headers()["x-wp-total"])).toBeGreaterThanOrEqual(8);
+  expect(posts.every((post) => post.author > 0)).toBe(true);
 
   await page.goto("/news/", { waitUntil: "networkidle" });
   await expect(

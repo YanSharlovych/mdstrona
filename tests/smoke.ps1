@@ -63,6 +63,13 @@ if ($postTotal -lt 8) {
 }
 Write-Host "[OK] dynamic news posts: $postTotal"
 
+$posts = Invoke-RestMethod -Uri "$BaseUrl/wp-json/wp/v2/posts?per_page=100&_fields=id,author"
+$postsWithoutAuthor = $posts | Where-Object { $_.author -le 0 }
+if ($postsWithoutAuthor) {
+    throw "Every published news post must have a WordPress author."
+}
+Write-Host "[OK] news post authors"
+
 $contact = Invoke-WebRequest -Uri "$BaseUrl/contact/" -UseBasicParsing
 if (
     $contact.Content -notmatch 'name="aluteco_contact_nonce"' -or
