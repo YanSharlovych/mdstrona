@@ -22,7 +22,7 @@ fi
 
 wp theme activate aluteco --allow-root
 wp eval-file /var/www/html/wp-content/themes/aluteco/inc/bootstrap-content.php --allow-root
-wp rewrite structure '/%postname%/' --hard --allow-root
-wp rewrite flush --hard --allow-root
+wp rewrite structure '/%postname%/' --allow-root
+wp rewrite flush --allow-root
 
 echo "ALUTECO WordPress setup complete."

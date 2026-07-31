@@ -1,0 +1,28 @@
+<!-- wp:template-part {"slug":"header","theme":"aluteco","area":"header"} /-->
+
+<!-- wp:group {"tagName":"main","anchor":"main","className":"site-main single-news","layout":{"type":"default"}} -->
+<main id="main" class="wp-block-group site-main single-news">
+	<!-- wp:group {"className":"shell","layout":{"type":"constrained"}} -->
+	<div class="wp-block-group shell">
+		<!-- wp:post-terms {"term":"category","textAlign":"left","className":"eyebrow"} /-->
+		<!-- wp:post-title {"level":1} /-->
+		<!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap"}} -->
+		<div class="wp-block-group">
+			<!-- wp:post-date /-->
+			<!-- wp:post-author-name {"isLink":true} /-->
+		</div>
+		<!-- /wp:group -->
+		<!-- wp:post-featured-image {"aspectRatio":"16/9","scale":"cover"} /-->
+		<!-- wp:post-content {"layout":{"type":"constrained"}} /-->
+		<!-- wp:post-terms {"term":"post_tag","prefix":"Tags: "} /-->
+		<!-- wp:separator -->
+		<hr class="wp-block-separator has-alpha-channel-opacity"/>
+		<!-- /wp:separator -->
+		<!-- wp:post-navigation-link {"type":"previous","label":"Previous article","showTitle":true} /-->
+		<!-- wp:post-navigation-link {"label":"Next article","showTitle":true} /-->
+	</div>
+	<!-- /wp:group -->
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","theme":"aluteco","area":"footer"} /-->

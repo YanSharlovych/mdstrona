@@ -1,0 +1,34 @@
+<!-- wp:template-part {"slug":"header","theme":"aluteco","area":"header"} /-->
+
+<!-- wp:group {"tagName":"main","anchor":"main","className":"site-main","layout":{"type":"default"}} -->
+<main id="main" class="wp-block-group site-main">
+	<!-- wp:pattern {"slug":"aluteco/news-hero"} /-->
+
+	<!-- wp:group {"className":"news-filter-bar shell","layout":{"type":"default"}} -->
+	<div class="wp-block-group news-filter-bar shell">
+		<!-- wp:columns {"verticalAlignment":"center"} -->
+		<div class="wp-block-columns are-vertically-aligned-center">
+			<!-- wp:column {"verticalAlignment":"center","width":"70%"} -->
+			<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:70%">
+				<!-- wp:categories {"showPostCounts":true} /-->
+			</div>
+			<!-- /wp:column -->
+			<!-- wp:column {"verticalAlignment":"center","width":"30%"} -->
+			<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:30%">
+				<!-- wp:search {"label":"Search news","showLabel":false,"placeholder":"Search news...","buttonText":"Search","buttonUseIcon":true} /-->
+			</div>
+			<!-- /wp:column -->
+		</div>
+		<!-- /wp:columns -->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- wp:group {"className":"shell","layout":{"type":"default"}} -->
+	<div class="wp-block-group shell">
+		<!-- wp:pattern {"slug":"aluteco/news-query"} /-->
+	</div>
+	<!-- /wp:group -->
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","theme":"aluteco","area":"footer"} /-->
