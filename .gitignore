@@ -5,6 +5,7 @@ skills-lock.json
 Thumbs.db
 .DS_Store
 .env
+node_modules/
 wp-content/uploads/
 wp-content/debug.log
 test-results/
