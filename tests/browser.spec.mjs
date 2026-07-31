@@ -8,6 +8,8 @@ const publicRoutes = [
   "/about-us/",
   "/contact/",
   "/news/",
+  "/news/?news_category=products",
+  "/news/?news_search=Stewart",
   "/news/page/2/",
   "/category/products/",
   "/?s=marine",
@@ -197,6 +199,64 @@ test("news is dynamic and paginated", async ({ page, request }) => {
   await expect(
     page.getByRole("link", { name: "2", exact: true })
   ).toHaveAttribute("href", /\/news\/page\/2\/$/);
+});
+
+test("news categories and live search update without leaving the page", async ({
+  page
+}) => {
+  await page.goto("/news/", { waitUntil: "networkidle" });
+  await page.evaluate(() => {
+    window.__alutecoNewsDocumentMarker = "same-document";
+  });
+
+  const productsResponse = page.waitForResponse(
+    (response) =>
+      response.url().includes("news_category=products") && response.status() === 200
+  );
+  await page
+    .locator(".news-category-controls")
+    .getByRole("link", { name: "Products", exact: true })
+    .click();
+  await productsResponse;
+
+  await expect(page).toHaveURL(/\/news\/\?news_category=products$/);
+  await expect(
+    page.locator(".news-category-controls a.is-active")
+  ).toHaveText("Products");
+  const productCards = page.locator(".news-query .wp-block-post");
+  const productTerms = await page
+    .locator(".news-query .wp-block-post-terms")
+    .allTextContents();
+  expect(await productCards.count()).toBeGreaterThan(0);
+  expect(productTerms.every((terms) => terms.includes("Products"))).toBe(true);
+  expect(
+    await page.evaluate(() => window.__alutecoNewsDocumentMarker)
+  ).toBe("same-document");
+
+  const allNewsResponse = page.waitForResponse(
+    (response) => response.url().endsWith("/news/") && response.status() === 200
+  );
+  await page
+    .locator(".news-category-controls")
+    .getByRole("link", { name: "All news", exact: true })
+    .click();
+  await allNewsResponse;
+
+  const searchResponse = page.waitForResponse(
+    (response) =>
+      response.url().includes("news_search=Stewart") && response.status() === 200
+  );
+  await page.getByPlaceholder("Search news...").fill("Stewart");
+  await searchResponse;
+
+  await expect(page).toHaveURL(/news_search=Stewart/);
+  await expect(page.locator(".news-query .wp-block-post-title")).toHaveText(
+    "Stewart Platform for Simulating Heavy Marine Conditions"
+  );
+  await expect(page.locator(".news-query .wp-block-post")).toHaveCount(1);
+  expect(
+    await page.evaluate(() => window.__alutecoNewsDocumentMarker)
+  ).toBe("same-document");
 });
 
 test("Gutenberg page editor and Site Editor load cleanly", async ({

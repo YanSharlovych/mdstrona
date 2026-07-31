@@ -151,8 +151,10 @@ Create articles under `Posts > Add New` and provide:
 - optional tags.
 
 The News page, category and tag archives, search results, and pagination update
-automatically. The seeded content uses six posts per listing page so pagination
-can be reviewed immediately.
+automatically. On the News page, category filters, live search, and pagination
+replace the results in place without a full page reload while keeping browser
+back/forward navigation and direct filtered URLs working. The seeded content
+uses six posts per listing page so pagination can be reviewed immediately.
 
 ### Replacing images
 

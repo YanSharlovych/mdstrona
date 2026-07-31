@@ -206,6 +206,198 @@
   }
   if (searchInput) searchInput.addEventListener("input", filterNews);
 
+  const newsFilterBar = document.querySelector(".news-filter-bar");
+  const wordpressNewsQuery = document.querySelector(".news-query");
+
+  if (newsFilterBar && wordpressNewsQuery) {
+    const categoryControls = newsFilterBar.querySelector(".news-category-controls");
+    const newsSearchForm = newsFilterBar.querySelector("form.wp-block-search");
+    const newsSearchInput = newsFilterBar.querySelector(".wp-block-search__input");
+    const allNewsLink = newsFilterBar.querySelector(".news-all-link a");
+    const newsStatus = document.createElement("p");
+    let searchTimer;
+    let requestController;
+
+    newsStatus.className = "news-results-status";
+    newsStatus.setAttribute("role", "status");
+    newsStatus.setAttribute("aria-live", "polite");
+    newsFilterBar.append(newsStatus);
+
+    const categoryFromLink = (link) => {
+      if (!link || link === allNewsLink) return "";
+      const url = new URL(link.href, window.location.origin);
+      const match = url.pathname.match(/\/category\/([^/]+)\/?$/);
+      return match ? decodeURIComponent(match[1]) : "";
+    };
+
+    const stateFromUrl = () => {
+      const params = new URLSearchParams(window.location.search);
+      return {
+        category: params.get("news_category") || "",
+        search: params.get("news_search") || "",
+        page: Math.max(1, Number.parseInt(params.get("news_page") || "1", 10) || 1)
+      };
+    };
+
+    const buildNewsUrl = (state) => {
+      const url = new URL(allNewsLink?.href || "/news/", window.location.origin);
+
+      if (state.category) url.searchParams.set("news_category", state.category);
+      if (state.search) url.searchParams.set("news_search", state.search);
+      if (state.page > 1) url.searchParams.set("news_page", String(state.page));
+
+      return url;
+    };
+
+    const updateNewsControls = (state, options = {}) => {
+      const { syncSearch = true } = options;
+
+      if (syncSearch && newsSearchInput && newsSearchInput.value !== state.search) {
+        newsSearchInput.value = state.search;
+      }
+
+      categoryControls?.querySelectorAll("a").forEach((link) => {
+        const isActive = categoryFromLink(link) === state.category;
+        link.classList.toggle("is-active", isActive);
+        if (isActive) link.setAttribute("aria-current", "page");
+        else link.removeAttribute("aria-current");
+      });
+    };
+
+    const updateNewsStatus = () => {
+      const count = document.querySelectorAll(".news-query .wp-block-post").length;
+      newsStatus.textContent = count === 1 ? "1 news item shown." : `${count} news items shown.`;
+    };
+
+    const pageFromPaginationLink = (link) => {
+      const url = new URL(link.href, window.location.origin);
+      const pathMatch = url.pathname.match(/\/page\/(\d+)\/?$/);
+      if (pathMatch) return Number.parseInt(pathMatch[1], 10);
+
+      for (const [key, value] of url.searchParams.entries()) {
+        if (/^query-\d+-page$/.test(key)) return Number.parseInt(value, 10) || 1;
+      }
+
+      return 1;
+    };
+
+    const loadNews = async (state, options = {}) => {
+      const { historyMode = "push", focusResults = false } = options;
+      const url = buildNewsUrl(state);
+
+      requestController?.abort();
+      const controller = new AbortController();
+      requestController = controller;
+      newsFilterBar.setAttribute("aria-busy", "true");
+      document.querySelector(".news-query")?.classList.add("is-loading");
+      newsStatus.textContent = "Loading news...";
+
+      try {
+        const response = await fetch(url, {
+          headers: { "X-Requested-With": "XMLHttpRequest" },
+          signal: controller.signal
+        });
+
+        if (!response.ok) throw new Error(`News request failed: ${response.status}`);
+
+        const pageDocument = new DOMParser().parseFromString(await response.text(), "text/html");
+        const nextQuery = pageDocument.querySelector(".news-query");
+        const currentQuery = document.querySelector(".news-query");
+
+        if (!nextQuery || !currentQuery) throw new Error("News results were not found.");
+
+        nextQuery.classList.remove("is-loading");
+        currentQuery.replaceWith(nextQuery);
+        nextQuery.querySelectorAll(".reveal").forEach((item) => item.classList.add("is-visible"));
+
+        if (historyMode === "push") window.history.pushState({ alutecoNews: true }, "", url);
+        if (historyMode === "replace") window.history.replaceState({ alutecoNews: true }, "", url);
+
+        updateNewsControls(state, { syncSearch: historyMode === "none" });
+        updateNewsStatus();
+
+        if (focusResults) {
+          nextQuery.setAttribute("tabindex", "-1");
+          nextQuery.focus({ preventScroll: true });
+          nextQuery.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth", block: "start" });
+        }
+      } catch (error) {
+        if (error?.name === "AbortError") return;
+        newsStatus.textContent = "News could not be updated. Please try again.";
+        document.querySelector(".news-query")?.classList.remove("is-loading");
+      } finally {
+        if (requestController === controller) {
+          newsFilterBar.removeAttribute("aria-busy");
+        }
+      }
+    };
+
+    const isPlainClick = (event) =>
+      event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey;
+
+    categoryControls?.addEventListener("click", (event) => {
+      const link = event.target.closest("a");
+      if (!link || !isPlainClick(event)) return;
+      event.preventDefault();
+      loadNews({
+        category: categoryFromLink(link),
+        search: newsSearchInput?.value.trim() || "",
+        page: 1
+      });
+    });
+
+    newsSearchForm?.addEventListener("submit", (event) => {
+      event.preventDefault();
+      loadNews({
+        category: stateFromUrl().category,
+        search: newsSearchInput?.value.trim() || "",
+        page: 1
+      });
+    });
+
+    newsSearchInput?.addEventListener("input", () => {
+      window.clearTimeout(searchTimer);
+      searchTimer = window.setTimeout(() => {
+        loadNews(
+          {
+            category: stateFromUrl().category,
+            search: newsSearchInput.value.trim(),
+            page: 1
+          },
+          { historyMode: "replace" }
+        );
+      }, 350);
+    });
+
+    document.addEventListener("click", (event) => {
+      const paginationLink = event.target.closest(".news-query .wp-block-query-pagination a");
+      const cardCategoryLink = event.target.closest(".news-query .wp-block-post-terms a");
+
+      if (paginationLink && isPlainClick(event)) {
+        event.preventDefault();
+        const currentState = stateFromUrl();
+        loadNews(
+          { ...currentState, page: pageFromPaginationLink(paginationLink) },
+          { focusResults: true }
+        );
+      } else if (cardCategoryLink && isPlainClick(event)) {
+        event.preventDefault();
+        loadNews({
+          category: categoryFromLink(cardCategoryLink),
+          search: newsSearchInput?.value.trim() || "",
+          page: 1
+        });
+      }
+    });
+
+    window.addEventListener("popstate", () => {
+      loadNews(stateFromUrl(), { historyMode: "none" });
+    });
+
+    updateNewsControls(stateFromUrl());
+    updateNewsStatus();
+  }
+
   const contactForm = document.querySelector("[data-contact-form]");
   const formStatus = document.querySelector("[data-form-status]");
   if (contactForm && formStatus && contactForm.dataset.ajaxDemo === "true") {

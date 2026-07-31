@@ -109,6 +109,41 @@ function aluteco_body_classes( $classes ) {
 add_filter( 'body_class', 'aluteco_body_classes' );
 
 /**
+ * Apply in-place News filters to the main posts-page query.
+ *
+ * Custom query parameters keep filtered results on the News page instead of
+ * switching WordPress to its category archive or global search template.
+ *
+ * @param WP_Query $query Current WordPress query.
+ */
+function aluteco_filter_news_query( $query ) {
+	if ( is_admin() || ! $query->is_main_query() || ! $query->is_home() ) {
+		return;
+	}
+
+	if ( isset( $_GET['news_category'] ) ) {
+		$category = sanitize_title( wp_unslash( $_GET['news_category'] ) );
+
+		if ( $category && term_exists( $category, 'category' ) ) {
+			$query->set( 'category_name', $category );
+		}
+	}
+
+	if ( isset( $_GET['news_search'] ) ) {
+		$search = sanitize_text_field( wp_unslash( $_GET['news_search'] ) );
+
+		if ( '' !== $search ) {
+			$query->set( 's', $search );
+		}
+	}
+
+	if ( isset( $_GET['news_page'] ) ) {
+		$query->set( 'paged', max( 1, absint( $_GET['news_page'] ) ) );
+	}
+}
+add_action( 'pre_get_posts', 'aluteco_filter_news_query' );
+
+/**
  * Provide a visual fallback when a post does not have a featured image.
  *
  * @param string $content Rendered featured-image block.
