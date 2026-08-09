@@ -6,6 +6,7 @@ on:
       - v2
     paths:
       - "wp-content/themes/aluteco/**"
+      - ".github/workflows/deploy-theme.yml"
   workflow_dispatch:
 
 concurrency:
