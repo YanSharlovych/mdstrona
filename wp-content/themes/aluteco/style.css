@@ -4,7 +4,7 @@ Theme URI: https://github.com/YanSharlovych/mdstrona
 Author: Yan Sharlovych
 Description: Native WordPress block theme for ALUTECO marine doors and home systems.
 Version: 1.0.0
-Requires at least: 6.6
+Requires at least: 7.0
 Requires PHP: 8.1
 Text Domain: aluteco
 */
@@ -151,6 +151,20 @@ button, input, textarea { font: inherit; }
   margin: auto;
   object-fit: contain;
 }
+.icon .wp-block-icon,
+.work-icon .wp-block-icon {
+  width: 54px;
+  height: 54px;
+  margin: 0;
+  color: inherit;
+}
+.icon .wp-block-icon svg,
+.work-icon .wp-block-icon svg {
+  width: 54px;
+  height: 54px;
+  fill: currentColor;
+  stroke: none;
+}
 .icon::before, .icon::after, .work-icon::before, .work-icon::after { content: none; }
 .tech-banner {
   min-height: 330px;
@@ -224,6 +238,29 @@ button, input, textarea { font: inherit; }
 .feature-icons span { display: flex; flex-direction: column; align-items: center; color: #0a1d3d; font-size: 12px; font-weight: 700; text-align: center; }
 .feature-icons span::before { content: none; }
 .feature-icons svg { width: 56px; height: 56px; margin: 0 auto 14px; color: var(--blue); fill: none; stroke: currentColor; stroke-width: 1.65; stroke-linecap: round; stroke-linejoin: round; }
+.feature-icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+  color: #0a1d3d;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+}
+.feature-icon-item > p { margin: 0; }
+.feature-icon-item .wp-block-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 14px;
+  color: var(--blue);
+}
+.feature-icon-item .wp-block-icon svg {
+  width: 56px;
+  height: 56px;
+  fill: currentColor;
+  stroke: none;
+}
 .photo-simulation {
   min-height: 460px;
   background-size: cover;
@@ -328,6 +365,8 @@ button, input, textarea { font: inherit; }
 .contact-details article { display: flex; gap: 24px; align-items: center; margin-top: 22px; }
 .round-icon { flex: 0 0 auto; width: 68px; height: 68px; display: grid; place-items: center; border-radius: 50%; background: #e9efff; color: var(--blue); font-size: 11px; font-weight: 800; text-transform: uppercase; }
 .round-icon svg { width: 31px; height: 31px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+.round-icon .wp-block-icon { width: 31px; height: 31px; margin: 0; color: inherit; }
+.round-icon .wp-block-icon svg { width: 31px; height: 31px; fill: currentColor; stroke: none; }
 .site-footer { padding: 42px 0 22px; color: #fff; background: radial-gradient(circle at 70% 0, rgba(var(--blue-rgb), .22), transparent 24rem), #03162d; }
 .site-footer.compact { margin-top: 0; }
 .site-footer .shell { width: var(--shell); margin-inline: auto; }
@@ -475,6 +514,46 @@ button, input, textarea { font: inherit; }
 .site-header .wp-block-navigation__submenu-container .wp-block-navigation-item__content {
   padding: 10px 12px;
 }
+.site-header .language-switcher {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+.site-header .language-switcher__link {
+  position: relative;
+  display: inline-flex;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  transition: color .2s var(--ease);
+}
+.site-header .language-switcher__link::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 3px;
+  left: 0;
+  height: 2px;
+  background: var(--blue);
+  transform: scaleX(0);
+  transition: transform .2s var(--ease);
+}
+.site-header .language-switcher__link:hover,
+.site-header .language-switcher__link.is-current {
+  color: var(--blue);
+}
+.site-header .language-switcher__link:hover::after,
+.site-header .language-switcher__link.is-current::after {
+  transform: scaleX(1);
+}
+.site-header .language-switcher__separator {
+  color: currentColor;
+  opacity: .5;
+}
 .wp-block-cover.hero {
   min-height: 80vh;
   min-height: 80dvh;
@@ -488,6 +567,12 @@ button, input, textarea { font: inherit; }
 }
 .wp-block-cover.hero .hero-copy {
   margin: 0;
+}
+.wp-block-cover.hero-product .hero-copy {
+  width: min(100%, 620px);
+}
+.wp-block-cover.hero-product h1 {
+  max-width: 7em;
 }
 .wp-block-cover.hero .wp-block-cover__image-background {
   object-fit: cover;
@@ -917,6 +1002,15 @@ button, input, textarea { font: inherit; }
   .site-header .wp-block-navigation__responsive-container-content .wp-block-navigation-item__content {
     width: 100%;
     padding: 12px 0;
+  }
+  .site-header .wp-block-navigation__responsive-container-content .language-switcher {
+    flex-direction: row;
+    align-self: flex-start;
+    gap: 8px;
+  }
+  .site-header .wp-block-navigation__responsive-container-content .language-switcher__link {
+    width: auto;
+    padding: 0 4px;
   }
   .site-header .wp-block-navigation__submenu-container {
     position: static !important;

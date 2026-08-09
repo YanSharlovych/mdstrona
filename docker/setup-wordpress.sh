@@ -24,7 +24,17 @@ if [ "$(wp theme list --status=active --field=name --allow-root)" != "aluteco" ]
   wp theme activate aluteco --allow-root
 fi
 
+if ! wp plugin is-installed translatepress-multilingual --allow-root; then
+  wp plugin install translatepress-multilingual --allow-root
+fi
+
+if ! wp plugin is-active translatepress-multilingual --allow-root; then
+  wp plugin activate translatepress-multilingual --allow-root
+fi
+
 wp eval-file /var/www/html/wp-content/themes/aluteco/inc/bootstrap-content.php --allow-root
+wp eval-file /var/www/html/wp-content/themes/aluteco/inc/bootstrap-editable-icons.php --allow-root
+wp eval-file /var/www/html/wp-content/themes/aluteco/inc/bootstrap-translations.php --allow-root
 wp rewrite structure '/%postname%/' --allow-root
 
 echo "ALUTECO WordPress setup complete."

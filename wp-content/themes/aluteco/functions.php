@@ -9,6 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+require_once get_theme_file_path( '/inc/multilingual.php' );
 require_once get_theme_file_path( '/inc/contact-form.php' );
 
 /**
@@ -109,6 +110,49 @@ function aluteco_body_classes( $classes ) {
 add_filter( 'body_class', 'aluteco_body_classes' );
 
 /**
+ * Find news posts by either their English source copy or Polish translation.
+ *
+ * @param string $search Search phrase entered by the visitor.
+ * @return int[]
+ */
+function aluteco_polish_news_search_ids( $search ) {
+	$needle = strtolower( remove_accents( $search ) );
+
+	if ( '' === $needle ) {
+		return array();
+	}
+
+	$posts = get_posts(
+		array(
+			'post_type'        => 'post',
+			'post_status'      => 'publish',
+			'posts_per_page'   => -1,
+			'suppress_filters' => true,
+		)
+	);
+	$matches = array();
+
+	foreach ( $posts as $post ) {
+		$source = implode(
+			' ',
+			array(
+				$post->post_title,
+				$post->post_excerpt,
+				wp_strip_all_tags( $post->post_content ),
+			)
+		);
+		$translated = aluteco_translate_polish_fragment( $source );
+		$haystack   = strtolower( remove_accents( $source . ' ' . $translated ) );
+
+		if ( false !== strpos( $haystack, $needle ) ) {
+			$matches[] = (int) $post->ID;
+		}
+	}
+
+	return $matches;
+}
+
+/**
  * Apply in-place News filters to the main posts-page query.
  *
  * Custom query parameters keep filtered results on the News page instead of
@@ -133,7 +177,12 @@ function aluteco_filter_news_query( $query ) {
 		$search = sanitize_text_field( wp_unslash( $_GET['news_search'] ) );
 
 		if ( '' !== $search ) {
-			$query->set( 's', $search );
+			if ( aluteco_is_polish() ) {
+				$matches = aluteco_polish_news_search_ids( $search );
+				$query->set( 'post__in', $matches ? $matches : array( 0 ) );
+			} else {
+				$query->set( 's', $search );
+			}
 		}
 	}
 

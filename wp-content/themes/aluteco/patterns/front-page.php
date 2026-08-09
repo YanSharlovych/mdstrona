@@ -114,28 +114,28 @@ $home_card_url   = esc_url( get_theme_file_uri( '/assets/photos/home-card-home-s
 	<div class="wp-block-group icon-grid">
 		<!-- wp:group {"className":"icon-card reveal","layout":{"type":"default"}} -->
 		<div class="wp-block-group icon-card reveal">
-			<!-- wp:group {"className":"icon shield","layout":{"type":"constrained"}} --><div class="wp-block-group icon shield"></div><!-- /wp:group -->
+			<!-- wp:group {"className":"icon shield","layout":{"type":"constrained"}} --><div class="wp-block-group icon shield"><!-- wp:icon {"icon":"core/shield","align":"center"} /--></div><!-- /wp:group -->
 			<!-- wp:heading {"level":3} --><h3 class="wp-block-heading">Premium quality</h3><!-- /wp:heading -->
 			<!-- wp:paragraph --><p>High-end materials and components for long-lasting performance.</p><!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:group -->
 		<!-- wp:group {"className":"icon-card reveal","layout":{"type":"default"}} -->
 		<div class="wp-block-group icon-card reveal">
-			<!-- wp:group {"className":"icon smart","layout":{"type":"constrained"}} --><div class="wp-block-group icon smart"></div><!-- /wp:group -->
+			<!-- wp:group {"className":"icon smart","layout":{"type":"constrained"}} --><div class="wp-block-group icon smart"><!-- wp:icon {"icon":"core/mobile","align":"center"} /--></div><!-- /wp:group -->
 			<!-- wp:heading {"level":3} --><h3 class="wp-block-heading">Smart door solutions</h3><!-- /wp:heading -->
 			<!-- wp:paragraph --><p>Intelligent systems for seamless and reliable operation.</p><!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:group -->
 		<!-- wp:group {"className":"icon-card reveal","layout":{"type":"default"}} -->
 		<div class="wp-block-group icon-card reveal">
-			<!-- wp:group {"className":"icon puzzle","layout":{"type":"constrained"}} --><div class="wp-block-group icon puzzle"></div><!-- /wp:group -->
+			<!-- wp:group {"className":"icon puzzle","layout":{"type":"constrained"}} --><div class="wp-block-group icon puzzle"><!-- wp:icon {"icon":"core/shuffle","align":"center"} /--></div><!-- /wp:group -->
 			<!-- wp:heading {"level":3} --><h3 class="wp-block-heading">Flexible</h3><!-- /wp:heading -->
 			<!-- wp:paragraph --><p>Modular solutions tailored to your project requirements.</p><!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:group -->
 		<!-- wp:group {"className":"icon-card reveal","layout":{"type":"default"}} -->
 		<div class="wp-block-group icon-card reveal">
-			<!-- wp:group {"className":"icon leaf","layout":{"type":"constrained"}} --><div class="wp-block-group icon leaf"></div><!-- /wp:group -->
+			<!-- wp:group {"className":"icon leaf","layout":{"type":"constrained"}} --><div class="wp-block-group icon leaf"><!-- wp:icon {"icon":"core/star-empty","align":"center"} /--></div><!-- /wp:group -->
 			<!-- wp:heading {"level":3} --><h3 class="wp-block-heading">Sustainable</h3><!-- /wp:heading -->
 			<!-- wp:paragraph --><p>Responsible design for a better future.</p><!-- /wp:paragraph -->
 		</div>
@@ -167,16 +167,16 @@ $home_card_url   = esc_url( get_theme_file_uri( '/assets/photos/home-card-home-s
 	<!-- wp:group {"className":"work-steps","layout":{"type":"grid","columnCount":4}} -->
 	<div class="wp-block-group work-steps">
 		<!-- wp:group {"className":"reveal","layout":{"type":"default"}} -->
-		<div class="wp-block-group reveal"><!-- wp:group {"className":"work-icon chat","layout":{"type":"constrained"}} --><div class="wp-block-group work-icon chat"></div><!-- /wp:group --><!-- wp:heading {"level":3} --><h3 class="wp-block-heading">Consultation</h3><!-- /wp:heading --><!-- wp:paragraph --><p>We listen to your needs and understand your project.</p><!-- /wp:paragraph --></div>
+		<div class="wp-block-group reveal"><!-- wp:group {"className":"work-icon chat","layout":{"type":"constrained"}} --><div class="wp-block-group work-icon chat"><!-- wp:icon {"icon":"core/comment","align":"center"} /--></div><!-- /wp:group --><!-- wp:heading {"level":3} --><h3 class="wp-block-heading">Consultation</h3><!-- /wp:heading --><!-- wp:paragraph --><p>We listen to your needs and understand your project.</p><!-- /wp:paragraph --></div>
 		<!-- /wp:group -->
 		<!-- wp:group {"className":"reveal","layout":{"type":"default"}} -->
-		<div class="wp-block-group reveal"><!-- wp:group {"className":"work-icon tools","layout":{"type":"constrained"}} --><div class="wp-block-group work-icon tools"></div><!-- /wp:group --><!-- wp:heading {"level":3} --><h3 class="wp-block-heading">Design &amp; Engineering</h3><!-- /wp:heading --><!-- wp:paragraph --><p>We design and engineer tailored solutions with precision.</p><!-- /wp:paragraph --></div>
+		<div class="wp-block-group reveal"><!-- wp:group {"className":"work-icon tools","layout":{"type":"constrained"}} --><div class="wp-block-group work-icon tools"><!-- wp:icon {"icon":"core/pencil","align":"center"} /--></div><!-- /wp:group --><!-- wp:heading {"level":3} --><h3 class="wp-block-heading">Design &amp; Engineering</h3><!-- /wp:heading --><!-- wp:paragraph --><p>We design and engineer tailored solutions with precision.</p><!-- /wp:paragraph --></div>
 		<!-- /wp:group -->
 		<!-- wp:group {"className":"reveal","layout":{"type":"default"}} -->
-		<div class="wp-block-group reveal"><!-- wp:group {"className":"work-icon gear","layout":{"type":"constrained"}} --><div class="wp-block-group work-icon gear"></div><!-- /wp:group --><!-- wp:heading {"level":3} --><h3 class="wp-block-heading">Manufacturing</h3><!-- /wp:heading --><!-- wp:paragraph --><p>Advanced production ensures high quality and durability.</p><!-- /wp:paragraph --></div>
+		<div class="wp-block-group reveal"><!-- wp:group {"className":"work-icon gear","layout":{"type":"constrained"}} --><div class="wp-block-group work-icon gear"><!-- wp:icon {"icon":"core/settings","align":"center"} /--></div><!-- /wp:group --><!-- wp:heading {"level":3} --><h3 class="wp-block-heading">Manufacturing</h3><!-- /wp:heading --><!-- wp:paragraph --><p>Advanced production ensures high quality and durability.</p><!-- /wp:paragraph --></div>
 		<!-- /wp:group -->
 		<!-- wp:group {"className":"reveal","layout":{"type":"default"}} -->
-		<div class="wp-block-group reveal"><!-- wp:group {"className":"work-icon wrench","layout":{"type":"constrained"}} --><div class="wp-block-group work-icon wrench"></div><!-- /wp:group --><!-- wp:heading {"level":3} --><h3 class="wp-block-heading">Installation support</h3><!-- /wp:heading --><!-- wp:paragraph --><p>We provide guidance and support for smooth installation.</p><!-- /wp:paragraph --></div>
+		<div class="wp-block-group reveal"><!-- wp:group {"className":"work-icon wrench","layout":{"type":"constrained"}} --><div class="wp-block-group work-icon wrench"><!-- wp:icon {"icon":"core/settings","align":"center"} /--></div><!-- /wp:group --><!-- wp:heading {"level":3} --><h3 class="wp-block-heading">Installation support</h3><!-- /wp:heading --><!-- wp:paragraph --><p>We provide guidance and support for smooth installation.</p><!-- /wp:paragraph --></div>
 		<!-- /wp:group -->
 	</div>
 	<!-- /wp:group -->
