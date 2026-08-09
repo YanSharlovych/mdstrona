@@ -205,12 +205,6 @@
           "fontWeight": "800",
           "textTransform": "uppercase"
         }
-      },
-      "core/post-title": {
-        "typography": {
-          "fontFamily": "var:preset|font-family|sora",
-          "fontWeight": "600"
-        }
       }
     }
   },

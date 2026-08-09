@@ -174,6 +174,100 @@ test("Gutenberg icon and image blocks are not replaced by fallbacks", async ({
   );
 });
 
+test("Global Styles typography overrides theme presentation defaults", async ({
+  page
+}) => {
+  const typography = {
+    family: '"Times New Roman", serif',
+    size: "31px",
+    style: "italic",
+    weight: "300",
+    letterSpacing: "2px",
+    lineHeight: "43.4px",
+    transform: "none"
+  };
+
+  const assertTypography = async (route, selectors) => {
+    await page.goto(route, { waitUntil: "networkidle" });
+    await page.evaluate(() => {
+      const themeStylesheet = document.querySelector("#aluteco-style-css");
+      const globalStylesTest = document.createElement("style");
+
+      globalStylesTest.textContent = `
+        body {
+          font-family: "Courier New", monospace;
+          font-size: 19px;
+          line-height: 2;
+        }
+        h1, h2, h3, h4, h5, h6 {
+          font-family: "Times New Roman", serif;
+          font-size: 31px;
+          font-style: italic;
+          font-weight: 300;
+          letter-spacing: 2px;
+          line-height: 1.4;
+          text-transform: none;
+        }
+        .wp-block-navigation,
+        .wp-element-button,
+        .wp-block-button__link {
+          font-family: "Times New Roman", serif;
+          font-size: 31px;
+          font-style: italic;
+          font-weight: 300;
+          letter-spacing: 2px;
+          line-height: 1.4;
+          text-transform: none;
+        }
+      `;
+
+      themeStylesheet.before(globalStylesTest);
+    });
+
+    await expect(page.locator("body")).toHaveCSS(
+      "font-family",
+      '"Courier New", monospace'
+    );
+    await expect(page.locator("body")).toHaveCSS("font-size", "19px");
+    await expect(page.locator("body")).toHaveCSS("line-height", "38px");
+
+    for (const selector of selectors) {
+      const element = page.locator(selector).first();
+      await expect(element).toHaveCSS("font-family", typography.family);
+      await expect(element).toHaveCSS("font-size", typography.size);
+      await expect(element).toHaveCSS("font-style", typography.style);
+      await expect(element).toHaveCSS("font-weight", typography.weight);
+      await expect(element).toHaveCSS(
+        "letter-spacing",
+        typography.letterSpacing
+      );
+      await expect(element).toHaveCSS("line-height", typography.lineHeight);
+      await expect(element).toHaveCSS("text-transform", typography.transform);
+    }
+  };
+
+  await assertTypography("/", [
+    ".hero h1",
+    ".product-tile h2",
+    ".icon-card h3",
+    ".work .section-title",
+    ".site-header .wp-block-navigation",
+    ".site-header .wp-block-navigation-item__content",
+    ".site-footer h2",
+    ".site-footer h3",
+    ".site-footer .wp-block-button__link"
+  ]);
+  await assertTypography("/contact/", [
+    ".contact-form-panel > h2",
+    ".message-form .wp-element-button"
+  ]);
+  await assertTypography("/news/", [".news-query .wp-block-post-title"]);
+  await assertTypography("/new-generation-sliding-door-systems/", [
+    ".single-news .wp-block-post-title"
+  ]);
+  await assertTypography("/missing-page/", [".error-page h1"]);
+});
+
 test("contact form exposes usable labels and validation", async ({ page }) => {
   await page.goto("/contact/", { waitUntil: "networkidle" });
 

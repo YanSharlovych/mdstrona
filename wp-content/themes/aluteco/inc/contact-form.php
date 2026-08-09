@@ -41,7 +41,7 @@ function aluteco_render_contact_form() {
 			<input id="aluteco-company" name="company" type="text" tabindex="-1" autocomplete="off">
 		</div>
 
-		<button class="button" type="submit"><?php esc_html_e( 'Send message', 'aluteco' ); ?> <span>&rarr;</span></button>
+		<button class="button wp-element-button" type="submit"><?php esc_html_e( 'Send message', 'aluteco' ); ?> <span>&rarr;</span></button>
 
 		<?php if ( 'success' === $status ) : ?>
 			<p class="form-status is-success" role="status"><?php esc_html_e( 'Thank you. Your message has been sent.', 'aluteco' ); ?></p>
