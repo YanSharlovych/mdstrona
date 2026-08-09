@@ -159,6 +159,8 @@ return array(
 		'Previous' => 'Wstecz',
 		'Previous article' => 'Poprzedni artykuł',
 		'Next article' => 'Następny artykuł',
+		'Article' => 'Artykuł',
+		'Topics' => 'Tematy',
 		'Tags:' => 'Tagi:',
 
 		'22 Jul 2026' => '22 lip 2026',

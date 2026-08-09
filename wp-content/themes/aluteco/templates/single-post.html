@@ -1,25 +1,77 @@
 <!-- wp:template-part {"slug":"header","theme":"aluteco","area":"header"} /-->
 
-<!-- wp:group {"tagName":"main","anchor":"main","className":"site-main single-news","layout":{"type":"default"}} -->
-<main id="main" class="wp-block-group site-main single-news">
-	<!-- wp:group {"className":"shell","layout":{"type":"constrained"}} -->
-	<div class="wp-block-group shell">
-		<!-- wp:post-terms {"term":"category","textAlign":"left","className":"eyebrow"} /-->
-		<!-- wp:post-title {"level":1} /-->
-		<!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap"}} -->
-		<div class="wp-block-group">
-			<!-- wp:post-date /-->
-			<!-- wp:post-author-name {"isLink":true} /-->
+<!-- wp:group {"tagName":"main","anchor":"main","align":"full","className":"site-main single-news","layout":{"type":"default"}} -->
+<main id="main" class="wp-block-group alignfull site-main single-news">
+	<!-- wp:group {"align":"full","className":"article-hero","layout":{"type":"default"}} -->
+	<div class="wp-block-group alignfull article-hero">
+		<!-- wp:group {"className":"shell article-hero-inner","layout":{"type":"default"}} -->
+		<div class="wp-block-group shell article-hero-inner">
+			<!-- wp:paragraph {"className":"article-back-link"} -->
+			<p class="article-back-link"><a href="/news/">News</a></p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:group {"className":"article-meta-row","layout":{"type":"flex","flexWrap":"wrap"}} -->
+			<div class="wp-block-group article-meta-row">
+				<!-- wp:post-terms {"term":"category","className":"article-category"} /-->
+				<!-- wp:post-date {"format":"j F Y"} /-->
+			</div>
+			<!-- /wp:group -->
+
+			<!-- wp:post-title {"level":1,"className":"article-title"} /-->
+			<!-- wp:post-excerpt {"moreText":"","excerptLength":40,"className":"article-deck"} /-->
 		</div>
 		<!-- /wp:group -->
-		<!-- wp:post-featured-image {"aspectRatio":"16/9","scale":"cover"} /-->
-		<!-- wp:post-content {"layout":{"type":"constrained"}} /-->
-		<!-- wp:post-terms {"term":"post_tag","prefix":"Tags: "} /-->
-		<!-- wp:separator -->
-		<hr class="wp-block-separator has-alpha-channel-opacity"/>
-		<!-- /wp:separator -->
-		<!-- wp:post-navigation-link {"type":"previous","label":"Previous article","showTitle":true} /-->
-		<!-- wp:post-navigation-link {"label":"Next article","showTitle":true} /-->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- wp:group {"className":"shell article-featured-wrap","layout":{"type":"default"}} -->
+	<div class="wp-block-group shell article-featured-wrap">
+		<!-- wp:post-featured-image {"aspectRatio":"16/9","scale":"cover","className":"article-featured-image"} /-->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- wp:group {"className":"shell article-reading-grid","layout":{"type":"default"}} -->
+	<div class="wp-block-group shell article-reading-grid">
+		<!-- wp:group {"tagName":"aside","className":"article-aside","layout":{"type":"default"}} -->
+		<aside class="wp-block-group article-aside">
+			<!-- wp:group {"className":"article-aside-item","layout":{"type":"default"}} -->
+			<div class="wp-block-group article-aside-item">
+				<!-- wp:paragraph {"className":"eyebrow"} -->
+				<p class="eyebrow">Article</p>
+				<!-- /wp:paragraph -->
+				<!-- wp:paragraph -->
+				<p>ALUTECO Journal</p>
+				<!-- /wp:paragraph -->
+			</div>
+			<!-- /wp:group -->
+
+			<!-- wp:group {"className":"article-aside-item","layout":{"type":"default"}} -->
+			<div class="wp-block-group article-aside-item">
+				<!-- wp:paragraph {"className":"eyebrow"} -->
+				<p class="eyebrow">Topics</p>
+				<!-- /wp:paragraph -->
+				<!-- wp:post-terms {"term":"post_tag"} /-->
+			</div>
+			<!-- /wp:group -->
+		</aside>
+		<!-- /wp:group -->
+
+		<!-- wp:group {"tagName":"article","className":"article-body","layout":{"type":"default"}} -->
+		<article class="wp-block-group article-body">
+			<!-- wp:post-content {"layout":{"type":"default"}} /-->
+		</article>
+		<!-- /wp:group -->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- wp:group {"align":"full","className":"article-navigation-band","layout":{"type":"default"}} -->
+	<div class="wp-block-group alignfull article-navigation-band">
+		<!-- wp:group {"className":"shell article-navigation","layout":{"type":"default"}} -->
+		<div class="wp-block-group shell article-navigation">
+			<!-- wp:post-navigation-link {"type":"previous","label":"Previous article","showTitle":true} /-->
+			<!-- wp:post-navigation-link {"label":"Next article","showTitle":true} /-->
+		</div>
+		<!-- /wp:group -->
 	</div>
 	<!-- /wp:group -->
 </main>

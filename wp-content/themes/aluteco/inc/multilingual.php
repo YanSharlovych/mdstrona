@@ -225,6 +225,7 @@ function aluteco_translate_polish_image_alt( $block_content ) {
 add_filter( 'render_block_core/image', 'aluteco_translate_polish_image_alt' );
 add_filter( 'render_block_core/cover', 'aluteco_translate_polish_image_alt' );
 add_filter( 'render_block_core/post-featured-image', 'aluteco_translate_polish_image_alt' );
+add_filter( 'render_block_core/paragraph', 'aluteco_translate_polish_fragment' );
 add_filter( 'render_block_core/post-excerpt', 'aluteco_translate_polish_fragment' );
 add_filter( 'render_block_core/read-more', 'aluteco_translate_polish_fragment' );
 add_filter( 'render_block_core/query-title', 'aluteco_translate_polish_fragment' );
