@@ -11,6 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 require_once get_theme_file_path( '/inc/multilingual.php' );
 require_once get_theme_file_path( '/inc/contact-form.php' );
+require_once get_theme_file_path( '/inc/custom-icons.php' );
 
 /**
  * Configure theme supports and block editor behavior.

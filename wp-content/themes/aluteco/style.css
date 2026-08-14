@@ -261,6 +261,35 @@ button, input, textarea { font: inherit; }
   fill: currentColor;
   stroke: none;
 }
+.wp-block-aluteco-icon {
+  display: grid;
+  place-items: center;
+  color: var(--blue);
+}
+.wp-block-aluteco-icon svg,
+.icon .wp-block-aluteco-icon svg,
+.work-icon .wp-block-aluteco-icon svg,
+.feature-icon-item .wp-block-aluteco-icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.45;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.icon .wp-block-aluteco-icon,
+.work-icon .wp-block-aluteco-icon {
+  width: 54px;
+  height: 54px;
+  margin: 0;
+}
+.feature-icon-item .wp-block-aluteco-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 14px;
+}
 .photo-simulation {
   min-height: 460px;
   background-size: cover;

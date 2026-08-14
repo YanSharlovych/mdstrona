@@ -206,6 +206,11 @@ block toolbar to pick another icon. The selected block is the single source of
 truth for both the editor and the frontend; the theme does not generate hidden
 content-icon fallbacks with JavaScript.
 
+The theme also provides an `ALUTECO Icon` block with the approved custom SVG
+library. Insert this block in place of a standard Icon block, then use `Replace
+icon` in its toolbar or the `Icon` selector in the settings sidebar. Existing
+page icons are not changed automatically.
+
 ### Using ALUTECO patterns
 
 1. Edit a page or create a new page in Gutenberg.
