@@ -233,7 +233,7 @@
 				? { name: 'custom', label: props.attributes.customFileName || __( 'Custom SVG', 'aluteco' ), svg: sanitizedCustomSvg }
 				: findIcon( props.attributes.icon );
 			const blockProps = useBlockProps( {
-				className: 'wp-block-icon aluteco-icon aluteco-icon--' + selected.name,
+				className: 'aluteco-icon aluteco-icon--' + selected.name,
 			} );
 
 			function chooseIcon( icon ) {

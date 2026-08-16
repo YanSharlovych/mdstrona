@@ -178,7 +178,7 @@ function aluteco_render_custom_icon_block( $attributes ) {
 
 	$wrapper_attributes = get_block_wrapper_attributes(
 		array(
-			'class' => 'wp-block-icon aluteco-icon aluteco-icon--' . $icon,
+			'class' => 'aluteco-icon aluteco-icon--' . $icon,
 		)
 	);
 

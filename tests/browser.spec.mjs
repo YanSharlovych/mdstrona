@@ -282,15 +282,15 @@ test("all page-section icons render from editable Gutenberg blocks", async ({
 }) => {
   for (const iconPage of editableIconPages) {
     await page.goto(iconPage.route, { waitUntil: "networkidle" });
-    await expect(page.locator("main .wp-block-icon")).toHaveCount(
-      iconPage.count
+    const editableIcons = page.locator(
+      "main .wp-block-icon, main .wp-block-aluteco-icon"
     );
-    await expect(page.locator("main .wp-block-icon svg")).toHaveCount(
-      iconPage.count
-    );
+
+    await expect(editableIcons).toHaveCount(iconPage.count);
+    await expect(editableIcons.locator("svg")).toHaveCount(iconPage.count);
     await expect(
       page.locator(
-        "main .icon:empty, main .work-icon:empty, main .feature-icon-item:not(:has(.wp-block-icon)), main .round-icon:not(:has(.wp-block-icon))"
+        "main .icon:empty, main .work-icon:empty, main .feature-icon-item:not(:has(.wp-block-icon, .wp-block-aluteco-icon)), main .round-icon:not(:has(.wp-block-icon, .wp-block-aluteco-icon))"
       )
     ).toHaveCount(0);
   }
@@ -589,9 +589,11 @@ test("Gutenberg page editor and Site Editor load cleanly", async ({
     await expect(page.locator(".block-editor-warning")).toHaveCount(0);
 
     const editor = page.frameLocator('iframe[name="editor-canvas"]');
-    await expect(editor.locator('[data-type="core/icon"]')).toHaveCount(
-      editorPage.count
+    const editableIcons = editor.locator(
+      '[data-type="core/icon"], [data-type="aluteco/icon"]'
     );
+
+    await expect(editableIcons).toHaveCount(editorPage.count);
 
     if ("home" === editorPage.slug) {
       await expect(editor.locator("body")).toContainText(
@@ -600,7 +602,7 @@ test("Gutenberg page editor and Site Editor load cleanly", async ({
     }
 
     if ("marine-doors" === editorPage.slug) {
-      await editor.locator('[data-type="core/icon"]').first().click();
+      await editableIcons.first().click();
       await expect(
         page.getByRole("button", { name: /Replace/i }).first()
       ).toBeVisible();
