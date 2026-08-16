@@ -208,8 +208,10 @@ content-icon fallbacks with JavaScript.
 
 The theme also provides an `ALUTECO Icon` block with the approved custom SVG
 library. Insert this block in place of a standard Icon block, then use `Replace
-icon` in its toolbar or the `Icon` selector in the settings sidebar. Existing
-page icons are not changed automatically.
+icon` in its toolbar or `Browse icon library` in the settings sidebar. The
+visual library includes search and accepts a custom `.svg` file up to 100 KB.
+Uploaded SVG markup is sanitized in both the editor and the server renderer.
+Existing page icons are not changed automatically.
 
 ### Using ALUTECO patterns
 

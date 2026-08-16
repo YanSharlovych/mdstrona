@@ -54,6 +54,51 @@ function aluteco_get_custom_icon_svg( $icon ) {
 		return '';
 	}
 
+	return aluteco_sanitize_custom_icon_svg( file_get_contents( $path ) );
+}
+
+/**
+ * Sanitize SVG markup accepted by the editable icon block.
+ *
+ * The allowlist supports common outline and filled icon primitives while
+ * excluding scripts, external references, embedded styles and event handlers.
+ *
+ * @param string $svg Raw SVG markup.
+ * @return string
+ */
+function aluteco_sanitize_custom_icon_svg( $svg ) {
+	if ( ! is_string( $svg ) || '' === trim( $svg ) || strlen( $svg ) > 102400 ) {
+		return '';
+	}
+
+	$shape_attributes = array(
+		'class'             => true,
+		'd'                 => true,
+		'cx'                => true,
+		'cy'                => true,
+		'r'                 => true,
+		'rx'                => true,
+		'ry'                => true,
+		'x'                 => true,
+		'y'                 => true,
+		'x1'                => true,
+		'y1'                => true,
+		'x2'                => true,
+		'y2'                => true,
+		'width'             => true,
+		'height'            => true,
+		'points'            => true,
+		'fill'              => true,
+		'fill-rule'         => true,
+		'clip-rule'         => true,
+		'stroke'            => true,
+		'stroke-width'      => true,
+		'stroke-linecap'    => true,
+		'stroke-linejoin'   => true,
+		'stroke-miterlimit' => true,
+		'transform'         => true,
+		'opacity'           => true,
+	);
 	$allowed = array(
 		'svg'  => array(
 			'xmlns'           => true,
@@ -62,29 +107,37 @@ function aluteco_get_custom_icon_svg( $icon ) {
 			'height'          => true,
 			'fill'            => true,
 			'stroke'          => true,
-			'stroke-width'    => true,
-			'stroke-linecap'  => true,
-			'stroke-linejoin' => true,
-			'class'           => true,
-			'aria-hidden'     => true,
-			'aria-label'      => true,
-			'role'            => true,
-			'focusable'       => true,
+			'stroke-width'      => true,
+			'stroke-linecap'    => true,
+			'stroke-linejoin'   => true,
+			'stroke-miterlimit' => true,
+			'opacity'           => true,
+			'class'             => true,
+			'aria-hidden'       => true,
+			'aria-label'        => true,
+			'role'              => true,
+			'focusable'         => true,
 		),
-		'path' => array(
-			'd'               => true,
-			'fill'            => true,
-			'fill-rule'       => true,
-			'clip-rule'       => true,
-			'stroke'          => true,
-			'stroke-width'    => true,
-			'stroke-linecap'  => true,
-			'stroke-linejoin' => true,
-			'transform'       => true,
-		),
+		'g'        => $shape_attributes,
+		'path'     => $shape_attributes,
+		'polygon'  => $shape_attributes,
+		'polyline' => $shape_attributes,
+		'line'     => $shape_attributes,
+		'rect'     => $shape_attributes,
+		'circle'   => $shape_attributes,
+		'ellipse'  => $shape_attributes,
 	);
+	$sanitized = wp_kses( $svg, $allowed );
 
-	return wp_kses( file_get_contents( $path ), $allowed );
+	if ( ! preg_match( '/^\s*<svg\b[^>]*>.*<\/svg>\s*$/is', $sanitized ) ) {
+		return '';
+	}
+
+	if ( ! preg_match( '/<(?:path|polygon|polyline|line|rect|circle|ellipse)\b/i', $sanitized ) ) {
+		return '';
+	}
+
+	return $sanitized;
 }
 
 /**
@@ -95,7 +148,9 @@ function aluteco_get_custom_icon_svg( $icon ) {
  */
 function aluteco_render_custom_icon_block( $attributes ) {
 	$icon = isset( $attributes['icon'] ) ? sanitize_key( $attributes['icon'] ) : 'consultation';
-	$svg  = aluteco_get_custom_icon_svg( $icon );
+	$svg  = 'custom' === $icon && ! empty( $attributes['customSvg'] )
+		? aluteco_sanitize_custom_icon_svg( $attributes['customSvg'] )
+		: aluteco_get_custom_icon_svg( $icon );
 
 	if ( '' === $svg ) {
 		return '';

@@ -2,7 +2,7 @@
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
   "name": "aluteco/icon",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "title": "ALUTECO Icon",
   "category": "media",
   "icon": "star-filled",
@@ -14,6 +14,14 @@
       "default": "consultation"
     },
     "ariaLabel": {
+      "type": "string",
+      "default": ""
+    },
+    "customSvg": {
+      "type": "string",
+      "default": ""
+    },
+    "customFileName": {
       "type": "string",
       "default": ""
     }
@@ -30,5 +38,6 @@
       "padding": true
     }
   },
-  "editorScript": "aluteco-icon-editor"
+  "editorScript": "aluteco-icon-editor",
+  "editorStyle": "file:./editor.css"
 }

@@ -128,7 +128,7 @@ button, input, textarea { font: inherit; }
 .icon-card p, .value-card p { max-width: 100%; margin: 6px 0 0; overflow-wrap: break-word; font-size: 14px; color: var(--muted); }
 .icon, .work-icon { display: grid; width: 64px; height: 64px; margin: 0 auto 18px; place-items: center; color: var(--blue); position: relative; }
 .icon-card .icon { margin-bottom: 0; }
-.icon svg, .work-icon svg { width: 54px; height: 54px; fill: none; stroke: currentColor; stroke-width: 1.65; stroke-linecap: round; stroke-linejoin: round; }
+.icon > svg, .work-icon > svg { width: 54px; height: 54px; fill: none; stroke: currentColor; stroke-width: 1.65; stroke-linecap: round; stroke-linejoin: round; }
 .icon > .wp-block-image,
 .work-icon > .wp-block-image,
 .icon > .wp-block-icon,
@@ -158,8 +158,8 @@ button, input, textarea { font: inherit; }
   margin: 0;
   color: inherit;
 }
-.icon .wp-block-icon svg,
-.work-icon .wp-block-icon svg {
+.icon .wp-block-icon:not(.wp-block-aluteco-icon) svg,
+.work-icon .wp-block-icon:not(.wp-block-aluteco-icon) svg {
   width: 54px;
   height: 54px;
   fill: currentColor;
@@ -255,7 +255,7 @@ button, input, textarea { font: inherit; }
   margin: 0 auto 14px;
   color: var(--blue);
 }
-.feature-icon-item .wp-block-icon svg {
+.feature-icon-item .wp-block-icon:not(.wp-block-aluteco-icon) svg {
   width: 56px;
   height: 56px;
   fill: currentColor;
@@ -273,11 +273,6 @@ button, input, textarea { font: inherit; }
   display: block;
   width: 100%;
   height: 100%;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.45;
-  stroke-linecap: round;
-  stroke-linejoin: round;
 }
 .icon .wp-block-aluteco-icon,
 .work-icon .wp-block-aluteco-icon {
@@ -395,7 +390,7 @@ button, input, textarea { font: inherit; }
 .round-icon { flex: 0 0 auto; width: 68px; height: 68px; display: grid; place-items: center; border-radius: 50%; background: #e9efff; color: var(--blue); font-size: 11px; font-weight: 800; text-transform: uppercase; }
 .round-icon svg { width: 31px; height: 31px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
 .round-icon .wp-block-icon { width: 31px; height: 31px; margin: 0; color: inherit; }
-.round-icon .wp-block-icon svg { width: 31px; height: 31px; fill: currentColor; stroke: none; }
+.round-icon .wp-block-icon:not(.wp-block-aluteco-icon) svg { width: 31px; height: 31px; fill: currentColor; stroke: none; }
 .site-footer { padding: 42px 0 22px; color: #fff; background: radial-gradient(circle at 70% 0, rgba(var(--blue-rgb), .22), transparent 24rem), #03162d; }
 .site-footer.compact { margin-top: 0; }
 .site-footer .shell { width: var(--shell); margin-inline: auto; }
