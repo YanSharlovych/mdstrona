@@ -189,6 +189,10 @@ function aluteco_render_custom_icon_block( $attributes ) {
  * Register the custom icon block and expose the theme icon manifest to it.
  */
 function aluteco_register_custom_icon_block() {
+	if ( WP_Block_Type_Registry::get_instance()->is_registered( 'aluteco/icon' ) ) {
+		return;
+	}
+
 	$script_path = get_theme_file_path( '/blocks/icon/editor.js' );
 
 	wp_register_script(

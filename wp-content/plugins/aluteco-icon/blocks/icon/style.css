@@ -1,0 +1,13 @@
+.wp-block-aluteco-icon {
+  display: grid;
+  width: 54px;
+  height: 54px;
+  color: var(--blue, #176bff);
+  place-items: center;
+}
+
+.wp-block-aluteco-icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
