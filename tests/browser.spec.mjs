@@ -56,6 +56,7 @@ const publicRoutes = [
   "/contact/",
   "/privacy-policy/",
   "/cookies-policy/",
+  "/terms-conditions/",
   "/news/",
   "/news/?news_category=products",
   "/news/?news_search=Stewart",
@@ -246,7 +247,11 @@ test("mobile product rows show information before images", async ({ page }) => {
 test("legal pages keep their reading layout on desktop and mobile", async ({
   page
 }) => {
-  for (const route of ["/privacy-policy/", "/cookies-policy/"]) {
+  for (const route of [
+    "/privacy-policy/",
+    "/cookies-policy/",
+    "/terms-conditions/"
+  ]) {
     await page.setViewportSize({ width: 1440, height: 1000 });
     await page.goto(route, { waitUntil: "networkidle" });
 

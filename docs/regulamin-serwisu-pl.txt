@@ -1,0 +1,237 @@
+<!-- wp:group {"align":"full","className":"inner-page-header","layout":{"type":"default"}} -->
+<div class="wp-block-group alignfull inner-page-header"><!-- wp:group {"className":"shell","layout":{"type":"default"}} -->
+<div class="wp-block-group shell"><!-- wp:heading {"level":1} -->
+<h1 class="wp-block-heading">Regulamin serwisu</h1>
+<!-- /wp:heading -->
+
+<!-- wp:separator {"className":"blue-line"} -->
+<hr class="wp-block-separator has-alpha-channel-opacity blue-line"/>
+<!-- /wp:separator -->
+
+<!-- wp:paragraph -->
+<p>Zasady korzystania z serwisu ALUTECO, jego treści oraz usług świadczonych drogą elektroniczną.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"legal-layout shell","layout":{"type":"default"}} -->
+<div class="wp-block-group legal-layout shell"><!-- wp:group {"tagName":"aside","className":"legal-aside","layout":{"type":"default"}} -->
+<aside class="wp-block-group legal-aside"><!-- wp:paragraph {"className":"legal-aside-label"} -->
+<p class="legal-aside-label">Informacje o dokumencie</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"legal-aside-date"} -->
+<p class="legal-aside-date">Ostatnia aktualizacja:<br><strong>[DD.MM.RRRR]</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"className":"legal-toc"} -->
+<ul class="legal-toc"><!-- wp:list-item -->
+<li><a href="#postanowienia-ogolne">Postanowienia ogólne</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="#uslugi">Zakres usług</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="#wymagania">Wymagania techniczne</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="#zasady">Zasady korzystania</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="#oferty">Informacje i oferty</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="#prawa-autorskie">Prawa autorskie</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="#reklamacje">Reklamacje</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="#postanowienia-koncowe">Postanowienia końcowe</a></li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list --></aside>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"article","className":"legal-document","layout":{"type":"default"}} -->
+<article class="wp-block-group legal-document"><!-- wp:group {"className":"legal-note","layout":{"type":"default"}} -->
+<div class="wp-block-group legal-note"><!-- wp:paragraph -->
+<p><strong>Przed publikacją:</strong> uzupełnij pełną nazwę prawną firmy, NIP, REGON lub KRS oraz datę aktualizacji. Regulamin dotyczy serwisu informacyjnego i formularza kontaktowego, a nie sprzedaży internetowej.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:heading {"level":2,"anchor":"postanowienia-ogolne"} -->
+<h2 class="wp-block-heading" id="postanowienia-ogolne">1. Postanowienia ogólne</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Niniejszy regulamin określa zasady korzystania z serwisu internetowego dostępnego pod adresem <a href="https://aluteco.com/">https://aluteco.com/</a> (dalej: „Serwis”) oraz zasady świadczenia za jego pośrednictwem usług drogą elektroniczną.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Usługodawcą i administratorem Serwisu jest <strong>[PEŁNA NAZWA FIRMY]</strong> z siedzibą przy ul. Nadrzecznej 22, 16-010 Wasilków, Polska, NIP: <strong>[NIP]</strong>, REGON/KRS: <strong>[REGON LUB KRS, JEŚLI DOTYCZY]</strong>, działająca pod marką ALUTECO (dalej: „Usługodawca”). Kontakt z Usługodawcą jest możliwy pod adresem <a href="mailto:office@aluteco.com">office@aluteco.com</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Regulamin jest udostępniany nieodpłatnie w sposób umożliwiający jego wyświetlenie, zapisanie i odtworzenie. Rozpoczęcie korzystania z usług Serwisu oznacza akceptację postanowień regulaminu.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":2,"anchor":"uslugi"} -->
+<h2 class="wp-block-heading" id="uslugi">2. Zakres usług świadczonych drogą elektroniczną</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Za pośrednictwem Serwisu Usługodawca świadczy nieodpłatnie następujące usługi:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li>udostępnianie informacji o ALUTECO, oferowanych systemach, realizacjach i aktualnościach;</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>umożliwienie przesłania zapytania za pomocą formularza kontaktowego;</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>umożliwienie przejścia do zewnętrznych profili lub serwisów wskazanych w Serwisie.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Umowa o korzystanie z treści Serwisu zostaje zawarta z chwilą wejścia na stronę i wygasa z chwilą jej opuszczenia. Usługa formularza kontaktowego rozpoczyna się w chwili przystąpienia do jego wypełniania i kończy po przesłaniu wiadomości albo rezygnacji z jej wysłania. Użytkownik może zakończyć korzystanie z usług w każdej chwili.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":2,"anchor":"wymagania"} -->
+<h2 class="wp-block-heading" id="wymagania">3. Wymagania techniczne i zagrożenia</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Do prawidłowego korzystania z Serwisu potrzebne są urządzenie z dostępem do internetu, aktualna przeglądarka obsługująca HTML5, CSS i JavaScript oraz aktywne konto poczty elektronicznej w przypadku korzystania z formularza kontaktowego. Niektóre funkcje mogą wymagać obsługi niezbędnych plików cookie.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Korzystanie z usług internetowych wiąże się z typowymi zagrożeniami, w szczególności z możliwością działania złośliwego oprogramowania, prób wyłudzenia danych, przejęcia konta lub nieuprawnionego dostępu do transmisji. Użytkownik powinien korzystać z aktualnego oprogramowania, ochrony antywirusowej i bezpiecznego połączenia oraz nie udostępniać danych logowania osobom trzecim.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":2,"anchor":"zasady"} -->
+<h2 class="wp-block-heading" id="zasady">4. Zasady korzystania z Serwisu</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Użytkownik jest zobowiązany korzystać z Serwisu zgodnie z prawem, dobrymi obyczajami, niniejszym regulaminem oraz z poszanowaniem praw Usługodawcy i osób trzecich.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Zabronione jest w szczególności:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li>dostarczanie treści bezprawnych, obraźliwych, wprowadzających w błąd albo naruszających prawa osób trzecich;</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>przesyłanie niezamówionych informacji handlowych, automatycznych zapytań lub złośliwego kodu;</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>podejmowanie prób zakłócenia działania Serwisu, obejścia zabezpieczeń lub uzyskania nieuprawnionego dostępu;</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>kopiowanie albo wykorzystywanie treści Serwisu z naruszeniem praw własności intelektualnej.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading {"level":2,"anchor":"formularz"} -->
+<h2 class="wp-block-heading" id="formularz">5. Formularz kontaktowy</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Skorzystanie z formularza jest dobrowolne. Użytkownik powinien podać dane prawdziwe, aktualne i wystarczające do udzielenia odpowiedzi. Przesłanie formularza nie oznacza automatycznego przyjęcia zamówienia ani zawarcia umowy dotyczącej wykonania produktu lub usługi.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Usługodawca może pozostawić bez odpowiedzi wiadomości zawierające treści bezprawne, spam, próby nadużycia albo dane niewystarczające do obsługi zapytania. Zasady przetwarzania danych podanych w formularzu opisuje <a href="/privacy-policy/">Polityka prywatności</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":2,"anchor":"oferty"} -->
+<h2 class="wp-block-heading" id="oferty">6. Informacje o produktach i składanie ofert</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Treści, wizualizacje, parametry i opisy produktów publikowane w Serwisie mają charakter ogólny i informacyjny. O ile wyraźnie nie wskazano inaczej, nie stanowią oferty w rozumieniu Kodeksu cywilnego. Mogą natomiast stanowić zaproszenie do kontaktu i rozpoczęcia indywidualnych uzgodnień.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Ostateczny zakres, parametry techniczne, cena, termin realizacji, warunki gwarancji i odpowiedzialność są określane indywidualnie w ofercie, zamówieniu lub umowie zawartej z klientem. Postanowienia niniejszego regulaminu nie zastępują warunków takiej umowy.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":2,"anchor":"prawa-autorskie"} -->
+<h2 class="wp-block-heading" id="prawa-autorskie">7. Własność intelektualna</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Treści Serwisu, w tym nazwa i logo ALUTECO, teksty, fotografie, grafiki, wizualizacje, projekty, układ strony oraz materiały techniczne, są chronione przepisami prawa autorskiego, prawa własności przemysłowej lub innymi właściwymi przepisami.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Korzystanie z Serwisu nie przenosi na użytkownika żadnych praw do tych materiałów. Dozwolone jest ich używanie wyłącznie na własny, niekomercyjny użytek w zakresie dopuszczonym prawem. Publikacja, modyfikacja, zwielokrotnianie lub wykorzystanie komercyjne wymaga uprzedniej zgody uprawnionego podmiotu, chyba że przepisy wyraźnie stanowią inaczej.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":2,"anchor":"dostepnosc"} -->
+<h2 class="wp-block-heading" id="dostepnosc">8. Dostępność Serwisu i odpowiedzialność</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Usługodawca dokłada należytej staranności, aby informacje były aktualne, a Serwis działał prawidłowo i bezpiecznie. Możliwe są jednak czasowe przerwy związane z konserwacją, aktualizacjami, awariami infrastruktury, działaniem dostawców zewnętrznych lub zdarzeniami pozostającymi poza rozsądną kontrolą Usługodawcy.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Linki do zewnętrznych stron są udostępniane pomocniczo. Usługodawca nie zarządza tymi stronami i nie odpowiada za ich treść, dostępność ani zasady prywatności. Żadne postanowienie regulaminu nie wyłącza ani nie ogranicza odpowiedzialności w zakresie, w którym takie wyłączenie byłoby niedopuszczalne na mocy bezwzględnie obowiązujących przepisów, w szczególności przepisów chroniących konsumentów.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":2,"anchor":"reklamacje"} -->
+<h2 class="wp-block-heading" id="reklamacje">9. Reklamacje dotyczące usług elektronicznych</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Reklamacje dotyczące działania Serwisu lub usług świadczonych drogą elektroniczną można przesyłać na adres <a href="mailto:office@aluteco.com">office@aluteco.com</a> albo pocztą na adres siedziby Usługodawcy.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Zgłoszenie powinno zawierać dane umożliwiające kontakt z użytkownikiem, opis problemu, datę jego wystąpienia oraz oczekiwany sposób rozwiązania. Reklamacja zostanie rozpatrzona bez zbędnej zwłoki, nie później niż w terminie 14 dni od jej otrzymania. Jeżeli zgłoszenie wymaga uzupełnienia, termin biegnie od dnia przekazania potrzebnych informacji.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":2,"anchor":"prywatnosc"} -->
+<h2 class="wp-block-heading" id="prywatnosc">10. Prywatność i pliki cookie</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Zasady przetwarzania danych osobowych opisuje <a href="/privacy-policy/">Polityka prywatności</a>, a informacje o technologiach zapisywanych na urządzeniu użytkownika – <a href="/cookies-policy/">Polityka plików cookie</a>. Dokumenty te stanowią uzupełnienie niniejszego regulaminu.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":2,"anchor":"postanowienia-koncowe"} -->
+<h2 class="wp-block-heading" id="postanowienia-koncowe">11. Zmiany regulaminu i postanowienia końcowe</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Usługodawca może zmienić regulamin z ważnych przyczyn, w szczególności w razie zmiany prawa, zakresu usług, funkcjonalności Serwisu, danych Usługodawcy lub stosowanych rozwiązań technicznych. Nowa wersja obowiązuje od dnia wskazanego przy jej publikacji i nie narusza praw nabytych przed wejściem zmian w życie.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Do regulaminu stosuje się prawo polskie. W przypadku użytkownika będącego konsumentem wybór prawa polskiego nie pozbawia go ochrony przyznanej przez bezwzględnie obowiązujące przepisy państwa jego zwykłego pobytu. Spory są rozstrzygane przez sąd właściwy zgodnie z obowiązującymi przepisami.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Regulamin obowiązuje od dnia <strong>[DD.MM.RRRR]</strong>.</p>
+<!-- /wp:paragraph --></article>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
