@@ -178,16 +178,67 @@ test("skip link and mobile navigation work with the keyboard", async ({
   await expect(page.locator(":focus")).toHaveText("Skip to content");
   await expect(page.locator(":focus")).toHaveAttribute("href", "#main");
 
+  await page.evaluate(() => window.scrollTo(0, 1200));
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBeGreaterThan(1000);
   await page.getByRole("button", { name: /open menu/i }).click();
   const mobileMenu = page.locator(
     ".wp-block-navigation__responsive-container.is-menu-open"
   );
 
   await expect(mobileMenu).toBeVisible();
+  await expect.poll(async () => {
+    const box = await mobileMenu.boundingBox();
+    return box ? Math.round(box.height) : 0;
+  }).toBe(844);
   await expect(mobileMenu.getByRole("link", { name: "Marine Doors" })).toBeVisible();
   await expect(mobileMenu.getByRole("link", { name: "Home Systems" })).toBeVisible();
   await page.keyboard.press("Escape");
   await expect(mobileMenu).not.toBeVisible();
+});
+
+test("mobile product rows show information before images", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+
+  for (const productPage of [
+    { route: "/home-systems/", rows: ".product-section" },
+    { route: "/marine-doors/", rows: ".marine-row" }
+  ]) {
+    await page.goto(productPage.route, { waitUntil: "networkidle" });
+    const visualOrder = await page.locator(productPage.rows).evaluateAll((rows) =>
+      rows.map((row) =>
+        Array.from(row.children)
+          .map((child) => ({
+            type: child.classList.contains("product-info") ? "info" : "image",
+            top: child.getBoundingClientRect().top
+          }))
+          .sort((first, second) => first.top - second.top)
+          .map((item) => item.type)
+      )
+    );
+
+    expect(visualOrder.every((row) => row.join(",") === "info,image")).toBe(true);
+  }
+
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.goto("/marine-doors/", { waitUntil: "networkidle" });
+  const desktopOrder = await page.locator(".marine-row").evaluateAll((rows) =>
+    rows.map((row) =>
+      Array.from(row.children)
+        .map((child) => ({
+          type: child.classList.contains("product-info") ? "info" : "image",
+          left: child.getBoundingClientRect().left
+        }))
+        .sort((first, second) => first.left - second.left)
+        .map((item) => item.type)
+    )
+  );
+
+  expect(desktopOrder).toEqual([
+    ["info", "image"],
+    ["image", "info"],
+    ["info", "image"],
+    ["image", "info"]
+  ]);
 });
 
 test("language switcher preserves the current page in both languages", async ({

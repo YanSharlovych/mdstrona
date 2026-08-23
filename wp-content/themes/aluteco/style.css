@@ -1220,6 +1220,11 @@ button, input, textarea { font: inherit; }
 }
 @media (max-width: 980px) {
   :root { --shell: calc(100vw - 40px); }
+  .site-header.is-scrolled {
+    background: rgba(255,255,255,.98);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
   .nav-toggle { display: block; }
   .nav-menu[data-nav-menu] { position: fixed; top: 76px; left: 18px; right: 18px; display: grid; gap: 8px; padding: 18px; background: rgba(255,255,255,.96); color: var(--text); box-shadow: var(--shadow); opacity: 0; pointer-events: none; transform: translateY(-10px); transition: .2s var(--ease); }
   .nav-menu[data-nav-menu].is-open { opacity: 1; pointer-events: auto; transform: none; }
@@ -1252,7 +1257,13 @@ button, input, textarea { font: inherit; }
     color: var(--text);
   }
   .site-header .wp-block-navigation__responsive-container.is-menu-open {
+    inset: 0;
+    width: 100vw;
+    height: 100dvh;
+    max-height: 100dvh;
     padding: 28px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
     background: rgba(255,255,255,.98);
   }
   .site-header .wp-block-navigation__responsive-container-content,
@@ -1314,6 +1325,16 @@ button, input, textarea { font: inherit; }
   .product-tile { min-height: 310px; }
   .icon-grid, .value-grid, .number-grid, .work-steps, .news-grid, .footer-grid, .product-tabs, .page-product .hero-marine + .product-tabs, .audience-grid { grid-template-columns: 1fr; }
   .feature-icons { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 14px; }
+  .product-section > .product-info,
+  .marine-row > .product-info {
+    order: 1;
+  }
+  .product-section > .wp-block-image,
+  .product-section > .photo-simulation,
+  .marine-row > .wp-block-image,
+  .marine-row > .photo-simulation {
+    order: 2;
+  }
   .product-info { padding: 34px 22px; }
   .product-info .number { float: none; display: block; margin: 0 0 10px; }
   .photo-simulation { min-height: 280px; }
