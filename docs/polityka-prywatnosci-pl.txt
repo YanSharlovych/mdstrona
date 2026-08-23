@@ -1,0 +1,229 @@
+<!-- wp:group {"align":"full","className":"inner-page-header","layout":{"type":"default"}} -->
+<div class="wp-block-group alignfull inner-page-header"><!-- wp:group {"className":"shell","layout":{"type":"default"}} -->
+<div class="wp-block-group shell"><!-- wp:heading {"level":1} -->
+<h1 class="wp-block-heading">Polityka prywatności</h1>
+<!-- /wp:heading -->
+
+<!-- wp:separator {"className":"blue-line"} -->
+<hr class="wp-block-separator has-alpha-channel-opacity blue-line"/>
+<!-- /wp:separator -->
+
+<!-- wp:paragraph -->
+<p>Informujemy, w jaki sposób ALUTECO przetwarza dane osobowe użytkowników witryny oraz jak można skorzystać z praw wynikających z RODO.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"legal-layout shell","layout":{"type":"default"}} -->
+<div class="wp-block-group legal-layout shell"><!-- wp:group {"tagName":"aside","className":"legal-aside","layout":{"type":"default"}} -->
+<aside class="wp-block-group legal-aside"><!-- wp:paragraph {"className":"legal-aside-label"} -->
+<p class="legal-aside-label">Informacje o dokumencie</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"legal-aside-date"} -->
+<p class="legal-aside-date">Ostatnia aktualizacja:<br><strong>[DD.MM.RRRR]</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"className":"legal-toc"} -->
+<ul class="legal-toc"><!-- wp:list-item -->
+<li><a href="#administrator">Administrator danych</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="#zakres-danych">Zakres danych</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="#cele-podstawy">Cele i podstawy prawne</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="#odbiorcy">Odbiorcy danych</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="#retencja">Okres przechowywania</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="#prawa">Prawa użytkownika</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="#kontakt">Kontakt</a></li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list --></aside>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"article","className":"legal-document","layout":{"type":"default"}} -->
+<article class="wp-block-group legal-document"><!-- wp:group {"className":"legal-note","layout":{"type":"default"}} -->
+<div class="wp-block-group legal-note"><!-- wp:paragraph -->
+<p><strong>Przed publikacją:</strong> zastąp wszystkie informacje zapisane w nawiasach kwadratowych danymi firmy i potwierdź okresy przechowywania danych.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:heading {"level":2,"anchor":"administrator"} -->
+<h2 class="wp-block-heading" id="administrator">1. Administrator danych osobowych</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Administratorem danych osobowych jest <strong>[PEŁNA NAZWA FIRMY]</strong> z siedzibą przy <strong>[PEŁNY ADRES]</strong>, NIP: <strong>[NIP]</strong>, REGON/KRS: <strong>[REGON LUB KRS, JEŚLI DOTYCZY]</strong>, działająca pod marką ALUTECO (dalej: „Administrator”).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>W sprawach dotyczących ochrony danych osobowych można skontaktować się z Administratorem pod adresem e-mail: <a href="mailto:[ADRES E-MAIL]">[ADRES E-MAIL]</a> lub korespondencyjnie na adres siedziby.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":2,"anchor":"zakres-danych"} -->
+<h2 class="wp-block-heading" id="zakres-danych">2. Jakie dane przetwarzamy</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>W zależności od sposobu korzystania z witryny możemy przetwarzać:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li>dane podane w formularzu kontaktowym: imię i nazwisko, adres e-mail, numer telefonu oraz treść wiadomości;</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>dane przekazane podczas korespondencji e-mailowej lub telefonicznej;</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>dane techniczne związane z korzystaniem z witryny, takie jak adres IP, typ urządzenia i przeglądarki, data i godzina zapytania, adres odwiedzanej podstrony oraz informacje zapisane w logach serwera;</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>informacje dotyczące preferencji plików cookie, jeżeli na stronie zostanie uruchomiony mechanizm zarządzania zgodami.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading {"level":2,"anchor":"cele-podstawy"} -->
+<h2 class="wp-block-heading" id="cele-podstawy">3. Cele i podstawy prawne przetwarzania</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Dane osobowe przetwarzamy w następujących celach:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li>udzielenie odpowiedzi na zapytanie, przygotowanie oferty oraz podjęcie działań przed zawarciem umowy – na podstawie art. 6 ust. 1 lit. b RODO;</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>prowadzenie bieżącej korespondencji, zapewnienie bezpieczeństwa witryny, zapobieganie nadużyciom oraz ustalenie, dochodzenie lub obrona roszczeń – na podstawie prawnie uzasadnionego interesu Administratora, zgodnie z art. 6 ust. 1 lit. f RODO;</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>realizacja obowiązków wynikających z przepisów prawa, w szczególności podatkowych i rachunkowych – na podstawie art. 6 ust. 1 lit. c RODO;</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>korzystanie z opcjonalnych narzędzi analitycznych lub marketingowych – wyłącznie po uzyskaniu zgody, na podstawie art. 6 ust. 1 lit. a RODO, jeżeli takie narzędzia zostaną uruchomione.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Podanie danych w formularzu kontaktowym jest dobrowolne, ale niezbędne do udzielenia odpowiedzi. Zgodę można wycofać w dowolnym momencie, bez wpływu na zgodność z prawem przetwarzania dokonanego przed jej wycofaniem.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":2,"anchor":"odbiorcy"} -->
+<h2 class="wp-block-heading" id="odbiorcy">4. Odbiorcy danych</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Dane mogą być powierzane podmiotom wspierającym Administratora, w szczególności dostawcom hostingu, poczty elektronicznej, obsługi IT, bezpieczeństwa, usług księgowych lub prawnych. Dane mogą zostać udostępnione organom publicznym wyłącznie wtedy, gdy wymagają tego obowiązujące przepisy.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Jeżeli wykorzystywany dostawca przetwarza dane poza Europejskim Obszarem Gospodarczym, przekazanie odbywa się na podstawie mechanizmu dopuszczonego przez RODO, w szczególności decyzji Komisji Europejskiej stwierdzającej odpowiedni stopień ochrony albo standardowych klauzul umownych. Dotyczy to również danych technicznych przekazywanych przy korzystaniu z zewnętrznych usług internetowych, takich jak dostarczanie fontów lub zabezpieczenia strony.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":2,"anchor":"retencja"} -->
+<h2 class="wp-block-heading" id="retencja">5. Okres przechowywania danych</h2>
+<!-- /wp:heading -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li>dane z zapytań i korespondencji – przez czas potrzebny do obsługi sprawy, a następnie do upływu okresu przedawnienia ewentualnych roszczeń;</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>dane wymagane przepisami podatkowymi lub rachunkowymi – przez okres wskazany w tych przepisach;</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>logi techniczne serwera – przez <strong>[NP. 30 DNI – POTWIERDŹ Z FIRMĄ HOSTINGOWĄ]</strong>;</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>dane przetwarzane na podstawie zgody – do czasu jej wycofania lub ustania celu przetwarzania.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading {"level":2,"anchor":"prawa"} -->
+<h2 class="wp-block-heading" id="prawa">6. Prawa osób, których dane dotyczą</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Na zasadach określonych w RODO przysługuje prawo do:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li>dostępu do danych i uzyskania ich kopii;</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>sprostowania danych;</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>usunięcia danych lub ograniczenia ich przetwarzania;</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>przenoszenia danych;</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>wniesienia sprzeciwu wobec przetwarzania opartego na prawnie uzasadnionym interesie;</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>wycofania zgody w dowolnym momencie;</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading {"level":2,"anchor":"automatyzacja"} -->
+<h2 class="wp-block-heading" id="automatyzacja">7. Zautomatyzowane decyzje</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Dane użytkowników witryny nie są wykorzystywane do podejmowania decyzji opartych wyłącznie na zautomatyzowanym przetwarzaniu, które wywoływałyby skutki prawne lub w podobny sposób istotnie wpływały na użytkownika.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":2,"anchor":"bezpieczenstwo"} -->
+<h2 class="wp-block-heading" id="bezpieczenstwo">8. Bezpieczeństwo i zmiany polityki</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Administrator stosuje środki organizacyjne i techniczne odpowiednie do ryzyka, aby chronić dane przed utratą, nieuprawnionym dostępem, zmianą lub ujawnieniem. Polityka może być aktualizowana w związku ze zmianą działania witryny, używanych narzędzi albo obowiązujących przepisów. Aktualna wersja jest zawsze publikowana na tej stronie.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":2,"anchor":"kontakt"} -->
+<h2 class="wp-block-heading" id="kontakt">9. Kontakt</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Pytania dotyczące prywatności i realizacji praw można kierować na adres: <a href="mailto:[ADRES E-MAIL]">[ADRES E-MAIL]</a>.</p>
+<!-- /wp:paragraph --></article>
+<!-- /wp:group --></div>
+<!-- /wp:group -->

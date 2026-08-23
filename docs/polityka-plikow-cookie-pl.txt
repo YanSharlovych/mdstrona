@@ -1,0 +1,165 @@
+<!-- wp:group {"align":"full","className":"inner-page-header","layout":{"type":"default"}} -->
+<div class="wp-block-group alignfull inner-page-header"><!-- wp:group {"className":"shell","layout":{"type":"default"}} -->
+<div class="wp-block-group shell"><!-- wp:heading {"level":1} -->
+<h1 class="wp-block-heading">Polityka plików cookie</h1>
+<!-- /wp:heading -->
+
+<!-- wp:separator {"className":"blue-line"} -->
+<hr class="wp-block-separator has-alpha-channel-opacity blue-line"/>
+<!-- /wp:separator -->
+
+<!-- wp:paragraph -->
+<p>Wyjaśniamy, czym są pliki cookie, w jakim celu witryna ALUTECO może z nich korzystać oraz jak zarządzać swoimi ustawieniami.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"legal-layout shell","layout":{"type":"default"}} -->
+<div class="wp-block-group legal-layout shell"><!-- wp:group {"tagName":"aside","className":"legal-aside","layout":{"type":"default"}} -->
+<aside class="wp-block-group legal-aside"><!-- wp:paragraph {"className":"legal-aside-label"} -->
+<p class="legal-aside-label">Informacje o dokumencie</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"legal-aside-date"} -->
+<p class="legal-aside-date">Ostatnia aktualizacja:<br><strong>[DD.MM.RRRR]</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"className":"legal-toc"} -->
+<ul class="legal-toc"><!-- wp:list-item -->
+<li><a href="#czym-sa-cookie">Czym są pliki cookie</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="#rodzaje-cookie">Rodzaje plików</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="#wykorzystywane-cookie">Wykorzystywane pliki</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="#zgoda">Zgoda i ustawienia</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="#przegladarka">Ustawienia przeglądarki</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="#kontakt">Kontakt</a></li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list --></aside>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"article","className":"legal-document","layout":{"type":"default"}} -->
+<article class="wp-block-group legal-document"><!-- wp:group {"className":"legal-note","layout":{"type":"default"}} -->
+<div class="wp-block-group legal-note"><!-- wp:paragraph -->
+<p><strong>Przed publikacją:</strong> uzupełnij dane firmy i sprawdź tę tabelę ponownie po każdej instalacji narzędzia analitycznego, reklamowego, mapy, filmu lub formularza zewnętrznego.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:heading {"level":2,"anchor":"czym-sa-cookie"} -->
+<h2 class="wp-block-heading" id="czym-sa-cookie">1. Czym są pliki cookie</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Pliki cookie to niewielkie pliki tekstowe zapisywane na urządzeniu użytkownika podczas korzystania z witryny. Mogą umożliwiać prawidłowe działanie strony, zapamiętywanie ustawień, zapewnienie bezpieczeństwa, a po uzyskaniu zgody również prowadzenie analiz lub działań marketingowych.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Pliki sesyjne są usuwane po zamknięciu przeglądarki. Pliki trwałe pozostają na urządzeniu przez czas wskazany w ich ustawieniach albo do chwili ręcznego usunięcia. Pliki własne ustawia odwiedzana witryna, a pliki podmiotów trzecich – zewnętrzni dostawcy usług.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":2,"anchor":"rodzaje-cookie"} -->
+<h2 class="wp-block-heading" id="rodzaje-cookie">2. Rodzaje plików cookie</h2>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Niezbędne</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Służą do zapewnienia podstawowych funkcji, bezpieczeństwa i obsługi zaplecza WordPress. Nie wymagają zgody, ponieważ bez nich określone funkcje techniczne nie mogłyby działać prawidłowo.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Funkcjonalne</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Zapamiętują wybory użytkownika, np. wersję językową. Jeżeli nie są niezbędne do działania usługi żądanej przez użytkownika, są uruchamiane dopiero po uzyskaniu zgody.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Analityczne i marketingowe</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Pomagają mierzyć ruch, analizować zachowanie użytkowników lub dopasowywać reklamę. Mogą być wykorzystywane wyłącznie po uprzednim wyrażeniu dobrowolnej zgody.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":2,"anchor":"wykorzystywane-cookie"} -->
+<h2 class="wp-block-heading" id="wykorzystywane-cookie">3. Pliki wykorzystywane w witrynie</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Zgodnie z aktualną konfiguracją publiczna część witryny nie uruchamia plików analitycznych ani marketingowych. WordPress może stosować następujące techniczne pliki cookie związane głównie z logowaniem administratorów i obsługą zaplecza:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table -->
+<figure class="wp-block-table"><table><thead><tr><th>Nazwa lub grupa</th><th>Cel</th><th>Kategoria</th><th>Okres</th></tr></thead><tbody><tr><td><code>wordpress_test_cookie</code></td><td>Sprawdzenie, czy przeglądarka obsługuje pliki cookie.</td><td>Niezbędne</td><td>Sesja</td></tr><tr><td><code>wordpress_logged_in_*</code>, <code>wordpress_sec_*</code></td><td>Utrzymanie i zabezpieczenie sesji zalogowanego administratora.</td><td>Niezbędne</td><td>Sesja lub okres logowania</td></tr><tr><td><code>wp-settings-*</code>, <code>wp-settings-time-*</code></td><td>Zapamiętanie ustawień panelu administracyjnego.</td><td>Niezbędne</td><td>Zwykle do 1 roku</td></tr><tr><td><code>wp_lang</code></td><td>Zapamiętanie języka interfejsu logowania lub panelu administracyjnego.</td><td>Funkcjonalne / zaplecze</td><td>Sesja</td></tr></tbody></table></figure>
+<!-- /wp:table -->
+
+<!-- wp:paragraph -->
+<p>W praktyce większość powyższych plików dotyczy wyłącznie osób uprawnionych do logowania w panelu WordPress, a nie zwykłych odwiedzających. Dokładna lista może różnić się zależnie od konfiguracji hostingu, WordPressa i aktywnych wtyczek.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Jeżeli w przyszłości zostaną dodane narzędzia takie jak Google Analytics, Meta Pixel, YouTube, Google Maps, reCAPTCHA lub zewnętrzny system formularzy, polityka i mechanizm zgody muszą zostać zaktualizowane przed ich uruchomieniem.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":2,"anchor":"zgoda"} -->
+<h2 class="wp-block-heading" id="zgoda">4. Zgoda i zmiana ustawień</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Pliki niezbędne mogą być używane bez zgody. Pozostałe kategorie powinny być domyślnie wyłączone i uruchamiane dopiero po świadomym wyborze użytkownika. Odmowa powinna być równie łatwa jak akceptacja, a wycofanie zgody nie wpływa na zgodność z prawem wcześniejszego przetwarzania.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Jeżeli na stronie działa panel preferencji, użytkownik może w dowolnym momencie ponownie otworzyć jego ustawienia za pomocą przycisku <strong>„Ustawienia plików cookie”</strong> dostępnego w stopce witryny. <strong>[USUŃ TO ZDANIE, JEŻELI PANEL PREFERENCJI NIE JEST ZAINSTALOWANY]</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":2,"anchor":"przegladarka"} -->
+<h2 class="wp-block-heading" id="przegladarka">5. Ustawienia przeglądarki</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Pliki cookie można również przeglądać, blokować i usuwać w ustawieniach używanej przeglądarki. Ograniczenie niezbędnych plików może spowodować, że niektóre funkcje strony lub panelu administracyjnego nie będą działać prawidłowo.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":2,"anchor":"dane-osobowe"} -->
+<h2 class="wp-block-heading" id="dane-osobowe">6. Dane osobowe i podmioty trzecie</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Jeżeli identyfikatory zapisywane w plikach cookie mogą zostać powiązane z konkretną osobą, zasady przetwarzania tych danych opisuje również Polityka prywatności. Zewnętrzni dostawcy mogą stosować własne technologie tylko zgodnie z wybraną przez użytkownika zgodą i własnymi zasadami prywatności.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":2,"anchor":"zmiany"} -->
+<h2 class="wp-block-heading" id="zmiany">7. Zmiany polityki</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Polityka może być aktualizowana po zmianie funkcji witryny, dostawców usług albo obowiązujących przepisów. Data ostatniej aktualizacji jest wskazana na początku dokumentu.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":2,"anchor":"kontakt"} -->
+<h2 class="wp-block-heading" id="kontakt">8. Kontakt</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Administratorem witryny jest <strong>[PEŁNA NAZWA FIRMY]</strong>. Pytania dotyczące plików cookie można kierować na adres: <a href="mailto:[ADRES E-MAIL]">[ADRES E-MAIL]</a>.</p>
+<!-- /wp:paragraph --></article>
+<!-- /wp:group --></div>
+<!-- /wp:group -->

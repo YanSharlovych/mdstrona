@@ -106,6 +106,10 @@ function aluteco_body_classes( $classes ) {
 		$classes[] = 'page-product';
 	}
 
+	if ( is_page( array( 'privacy-policy', 'cookies-policy', 'terms-conditions' ) ) ) {
+		$classes[] = 'page-legal';
+	}
+
 	return array_unique( $classes );
 }
 add_filter( 'body_class', 'aluteco_body_classes' );

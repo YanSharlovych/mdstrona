@@ -54,6 +54,8 @@ const publicRoutes = [
   "/marine-doors/",
   "/about-us/",
   "/contact/",
+  "/privacy-policy/",
+  "/cookies-policy/",
   "/news/",
   "/news/?news_category=products",
   "/news/?news_search=Stewart",
@@ -239,6 +241,35 @@ test("mobile product rows show information before images", async ({ page }) => {
     ["info", "image"],
     ["image", "info"]
   ]);
+});
+
+test("legal pages keep their reading layout on desktop and mobile", async ({
+  page
+}) => {
+  for (const route of ["/privacy-policy/", "/cookies-policy/"]) {
+    await page.setViewportSize({ width: 1440, height: 1000 });
+    await page.goto(route, { waitUntil: "networkidle" });
+
+    const aside = page.locator(".legal-aside");
+    const document = page.locator(".legal-document");
+    const desktop = await Promise.all([aside.boundingBox(), document.boundingBox()]);
+
+    expect(desktop[0]).not.toBeNull();
+    expect(desktop[1]).not.toBeNull();
+    expect(desktop[0].x + desktop[0].width).toBeLessThan(desktop[1].x);
+    await expect(aside.locator('a[href^="#"]').first()).toBeVisible();
+
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.reload({ waitUntil: "networkidle" });
+
+    const mobile = await Promise.all([aside.boundingBox(), document.boundingBox()]);
+    expect(Math.abs(mobile[0].x - mobile[1].x)).toBeLessThanOrEqual(2);
+    expect(
+      await page.evaluate(
+        () => document.documentElement.scrollWidth > window.innerWidth + 1
+      )
+    ).toBe(false);
+  }
 });
 
 test("language switcher preserves the current page in both languages", async ({
